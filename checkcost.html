@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="my-body">
+
+        <div class="freight-query-banner">
+          <div>
+            <h1>ตรวจเช็คค่าบริการและคำนวณค่าขนส่ง Flash Express</h1>
+            <p class="banner">กรอกรายละเอียดพัสดุ ระบบจะประเมินค่าจัดส่งให้คุณ เพื่อการจัดการที่เหมาะสมและคุ้มค่ามากที่สุด</p>
+            <a href="/booking/">
+              <button class="button">บริการรับพัสดุถึงหน้าบ้านฟรี</button>
+            </a>
+          </div>
+        </div>
+        <div class="freight-query-form banner">
+          <div class="breadcrumb text-line-1">
+            <a href="/"> หน้าแรก </a> &gt; ตรวจเช็คราคา Flash Express และคำนวณค่าขนส่ง    </div>
+          <div class="freight-query-form-content">
+            <div class="row">
+              <!-- 寄件人 -->
+              <div class="col">
+                <span class="titlt-mobile">ที่อยู่ผู้ส่ง</span>
+                <div class="form-item">
+                  <span class="span">ที่อยู่ผู้ส่ง</span>
+                  <div class="input">
+                    <select class="pcdsearch src_area select2-hidden-accessible" style="width: 100%; opacity: 0" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                      <option value="0-0-0-0" disabled="" selected="" data-select2-id="2">แขวง/เขต/จังหวัด/รหัสไปรษณีย์</option>
+                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="3" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-4f6i-container"><span class="select2-selection__rendered" id="select2-4f6i-container" role="textbox" aria-readonly="true" title="แขวง/เขต/จังหวัด/รหัสไปรษณีย์">แขวง/เขต/จังหวัด/รหัสไปรษณีย์</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                  </div>
+                  <i>กรุณาเลือกพื้นที่จัดส่ง</i>
+                </div>
+              </div>
+              <!-- 收件人 -->
+              <div class="col">
+                <span class="titlt-mobile">ที่อยู่ผู้รับ</span>
+                <div class="form-item">
+                  <span class="span">ที่อยู่ผู้รับ</span>
+                  <div class="input">
+                    <select class="pcdsearch dst_area select2-hidden-accessible" style="width: 100%; opacity: 0" data-select2-id="4" tabindex="-1" aria-hidden="true">
+                      <option value="0-0-0-0" disabled="" selected="" data-select2-id="5">แขวง/เขต/จังหวัด/รหัสไปรษณีย์</option>
+                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="6" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-62nf-container"><span class="select2-selection__rendered" id="select2-62nf-container" role="textbox" aria-readonly="true" title="แขวง/เขต/จังหวัด/รหัสไปรษณีย์">แขวง/เขต/จังหวัด/รหัสไปรษณีย์</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                  </div>
+                  <i>กรุณาเลือกพื้นที่รับของ</i>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- 重量 -->
+              <div class="col">
+                <span class="titlt-mobile">น้ำหนัก(kg)</span>
+                <div class="form-item">
+                  <span class="span">น้ำหนัก(kg)</span>
+                  <div class="input">
+                    <input type="text" class="weight_val" onpaste="return false" placeholder="">
+                  </div>
+                  <!-- <span class="unit">KG</span> -->
+                  <i></i>
+                </div>
+              </div>
+              <!-- 长宽高 -->
+              <div class="col special">
+                <span class="titlt-mobile">ยาว(cm)</span>
+                <div class="form-item">
+                  <span class="span">ยาว(cm)</span>
+                  <div class="input">
+                    <input type="text" class="length" maxlength="3" onpaste="return false" placeholder="">
+                  </div>
+                  <!-- <span class="unit">CM</span> -->
+                  <i></i>
+                </div>
+                <span class="titlt-mobile">กว้าง(cm)</span>
+                <div class="form-item">
+                  <span class="span">กว้าง(cm)</span>
+                  <div class="input">
+                    <input type="text" class="width" maxlength="3" onpaste="return false" placeholder="">
+                  </div>
+                  <!-- <span class="unit">CM</span> -->
+                  <i></i>
+                </div>
+                <span class="titlt-mobile">สูง(cm)</span>
+                <div class="form-item">
+                  <span class="span">สูง(cm)</span>
+                  <div class="input">
+                    <input type="text" class="height" maxlength="3" onpaste="return false" placeholder="">
+                  </div>
+                  <!-- <span class="unit">CM</span> -->
+                  <i></i>
+                </div>
+              </div>
+            </div>
+            <button class="button form-button">ตรวจเช็คราคา</button>
+            <div class="res">
+              <span>ตรวจเช็คราคา ： </span>
+              <div>
+                <i class="i"></i>
+                <s class="s"></s>
+              </div>
+            </div>
+            <div class="check-area">
+              เพิ่มค่าบริการจัดส่ง <u><a href="javascript:;" class="a-0dc2fe termAll" data-url="/outer/remote/">พื้นที่ห่างไกล</a></u> <span class="area-fee"></span> บาท      </div>
+            <div style="clear: both;"></div>
+            <div class="hint">
+              <span></span>
+              <a href="javascript:;" class="a-0dc2fe termAll" data-url="/outer/area/">โปรดคลิกอ่านรายละเอียด《คำชี้แจงจำกัดน้ำหนักพัสดุและปรับราคาในพื้นที่ที่กำหนด》</a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- 推荐 -->
+        <div class="freight-query-text">
+          <div class="banner">
+            <h2>บริการช่วยเหลือในการตรวจเช็คค่าจัดส่งพัสดุ</h2>
+            <i>เรามุ่งมั่นในการพัฒนาทีมงานของเราอย่างต่อเนื่อง เพื่อให้ลูกค้ามั่นใจการให้บริการจัดส่งพัสดุที่มีประสิทธิภาพ และลูกค้าพึงพอใจมากที่สุด อีกทั้งยังมีฝ่ายบริการลูกค้าสัมพันธ์ที่คอยช่วยเหลือในการให้ข้อมูลเกี่ยวกับค่าบริการจัดส่งพัสดุ และเพื่อประหยัดเวลา เราได้รวบรวมคำถามที่พบบ่อยเกี่ยวกับค่าบริการจัดส่งพัสดุ ซึ่งจะช่วยให้คุณสามารถค้นหาคำตอบในการติดตามพัสดุได้อย่างรวดเร็ว</i>
+            <span>
+              คลิ๊ก <a href="/faq/" class="a-0dc2fe">คำถามที่พบบ่อย</a> 
+            </span>
+      
+          </div>
+        </div>
+      
+        <!-- 底部banner -->
+        <div class="freight-query-banner-bottom">
+          <a href="/booking/">
+            <img src="/img/waybill-query/banner-top.png" alt="เช็คราคา Flash Express">
+          </a>
+        </div>
+      
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
