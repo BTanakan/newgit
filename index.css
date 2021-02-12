@@ -3,22 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.nav-bar-top{
-    background-color: #303133;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    height: 36px;
-    background-color: #303133;
-}
-
-.nav-bar-b{
-    background-color: #FFEA33;
-    height: 77px;
-    border-bottom: 1px solid black;
-}
-
 .content{
     background-color: #FFEA33;
     height: 500px;
+}
+
+
+.navbar-top{
+    background-color: #FFEA33;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-menu{
+    display: flex;
 }
