@@ -8,15 +8,15 @@ nav
 }
 .track
 {
-    display: block;
     position: relative;
     width: 900px;
     height: 320px;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    text-align: center;
-    background: #5c258d;
+    background: #ffffff;
 }
 .search
 {
