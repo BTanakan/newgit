@@ -4,14 +4,23 @@ body
 }
 nav
 {
-    background: #d9ff00;
+    background: rgba(29,161,242,1.00);
 }
 .track
 {
-    
+    display: block;
+    position: relative;
+    width: 900px;
+    height: 320px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    text-align: center;
+    background: #5c258d;
 }
 .search
 {
     color: #fff;
-    background: #fd7e14;
-}
+    background: rgba(29,161,242,1.00);
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 9999px;
