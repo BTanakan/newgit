@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="signin.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
         <nav>
@@ -50,10 +51,46 @@
                 </div>
                 <div class="card-sign-in">
                     <div class="card-content">
-                        
+                        <div class="button-card">
+                            <div id="btn"></div>
+                            <button type="button" class="toggle-btn" onclick="login()">Log in</button>
+                            <button type="button" class="toggle-btn" onclick="signup()">Sign up</button>
+                        </div>
+                        <div class="card-icon">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <form id="login" class="input-card">
+                            <input type="text" class="text-card" placeholder="User Id">
+                            <input type="text" class="text-card" placeholder="Enter Password">
+                            <button type="submit" class="submit-btn">Log in</button>
+                        </form>
+                        <form id="signup" class="input-card">
+                            <input type="text" class="text-card" placeholder="User Id">
+                            <input type="text" class="text-card" placeholder="Enter email">
+                            <input type="text" class="text-card" placeholder="Enter Password">
+                            <input type="checkbox" class="chech-box"><span>I agree </span>
+                            <button type="submit" class="submit-btn">Sign up</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("signup");
+            var z = document.getElementById("btn");
+
+            function signup(){
+                x.style.left ="-400px";
+                y.style.left ="50px";
+                z.style.left ="110px";
+            }
+            function login(){
+                x.style.left ="50px";
+                y.style.left ="450px";
+                z.style.left ="0";
+            }
+        </script>
     </body>
 </html>
