@@ -86,20 +86,19 @@ ul.menulist li a {
     background: #fff;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
+.body-card .card-header
+{
+    text-align: center;
+    padding: 50px 10px;
+    background: linear-gradient(to right, #109fff, #06ffff);
+    color: #fff;
+}
 .body-card .content
 {
     position: relative;
     width: 100%;
     padding: 20px 20px 20px 40px;
-    opacity: 0;
-    visibility: hidden;
     transition: 0.5s;
-}
-.body-card:hover .content
-{
-    opacity: 1;
-    visibility: visible;
-    left: 0%;
 }
 .body-card .content h2
 {
@@ -119,7 +118,7 @@ ul.menulist li a {
     color: #fff;
     padding: 10px 20px;
     border-radius: 10px;
-    background:  rgba(29,161,242,1.00);
+    background: linear-gradient(to right, #109fff, #06ffff);
     margin-top: 10px;
     text-decoration: none;
 }
