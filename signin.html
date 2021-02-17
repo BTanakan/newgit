@@ -12,7 +12,7 @@
             <div class="container-web">
                 <div class="nav-menu">
                     <ul class="menu">
-                        <li> <a href="#">Login/Signup</a></li>
+                        <li> <a href="#">เข้าสู่ระบบ/สมัครสมาชิก</a></li>
                         <li> <a href="#">English</a> </li>
                     </ul>
                     <!-- End ul -->
@@ -28,11 +28,11 @@
                 <div class="nav-menu-list">
                     <h1>LOGO</h1>
                     <ul class="menulist">
-                        <li><a href="#">About Me</a></li>
-                        <li><a href="#">Tracking</a></li>
-                        <li><a href="#">Calculator</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact </a></li>
+                        <li><a href="#">เกี่ยวกับเรา</a></li>
+                        <li><a href="tracking.html">เช็กพัสดุ</a></li>
+                        <li><a href="calculator.html">ราคา</a></li>
+                        <li><a href="FAQ.html">คำถามที่พบบ่อย</a></li>
+                        <li><a href="contact.html">ติดต่อเรา</a></li>
                     </ul>
                     <!-- End Menu-list -->
                 </div>
@@ -52,24 +52,25 @@
                     <div class="card-content">
                         <div class="button-card">
                             <div id="btn"></div>
-                            <button type="button" class="toggle-btn" onclick="login()">Log in</button>
-                            <button type="button" class="toggle-btn" onclick="signup()">Sign up</button>
+                            <button type="button" class="toggle-btn" onclick="login()">เข้าสู่ระบบ</button>
+                            <button type="button" class="toggle-btn" onclick="signup()">สมัครสมาชิก</button>
                         </div>
                         <div class="card-icon">
                             <i class="fab fa-facebook"></i>
                             <i class="fab fa-google"></i>
+                            <i class="fab fa-apple"></i>
                         </div>
-                        <form id="login" class="input-card">
-                            <input type="text" class="text-card" placeholder="User Id">
-                            <input type="text" class="text-card" placeholder="Enter Password">
-                            <button type="submit" class="submit-btn">Log in</button>
+                        <form id="login" class="input-card ">
+                            <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
+                            <input type="text" class="text-card" placeholder="รหัสผ่าน">
+                            <button type="submit" class="submit-btn">เข้าสู่ระบบ</button>
                         </form>
                         <form id="signup" class="input-card">
-                            <input type="text" class="text-card" placeholder="User Id">
-                            <input type="text" class="text-card" placeholder="Enter email">
-                            <input type="text" class="text-card" placeholder="Enter Password">
-                            <input type="checkbox" class="chech-box"><span>I agree </span>
-                            <button type="submit" class="submit-btn">Sign up</button>
+                            <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
+                            <input type="text" class="text-card" placeholder="อีเมล์">
+                            <input type="text" class="text-card" placeholder="รหัสผ่าน">
+                            <input type="checkbox" class="chech-box"><span>ยืนยัน </span>
+                            <button type="submit" class="submit-btn">สมัครสมาชิก</button>
                         </form>
                     </div>
                 </div>
