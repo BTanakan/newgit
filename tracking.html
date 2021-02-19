@@ -7,30 +7,67 @@
         <link href="tracking.css" rel="stylesheet">
     </head>
     <body>
-        <nav class="nav-header">
-            <header data-type="m" class="headerBx" style="">
-              <a href=""><img class="logo" src="kerry-logo.png" width='200'alt=""></a>
-            </header>
+        <nav>
+            <div class="container-web">
+                <div class="nav-menu">
+                    <ul class="menu">
+                        <li> <a href="#">เข้าสู่ระบบ/สมัครสมาชิก</a></li>
+                        <li> <a href="#">English</a> </li>
+                    </ul>
+                    <!-- End ul -->
+                    </nav-menu>
+                    <!-- End nav-menu -->
+                </div>
+                <!-- End Container -->
         </nav>
-        <div class="big"></div>
-            <div class="slide">
-                <img src="" alt="">
+        <!-- nav -->
+    
+        <div class="nav-bar-list">
+            <div class="container-web">
+                <div class="nav-menu-list">
+                    <h1>LOGO</h1>
+                    <ul class="menulist">
+                        <li><a href="#">เกี่ยวกับเรา</a></li>
+                        <li><a href="tracking.html">เช็กพัสดุ</a></li>
+                        <li><a href="calculator.html">ราคา</a></li>
+                        <li><a href="FAQ.html">คำถามที่พบบ่อย</a></li>
+                        <li><a href="contact.html">ติดต่อเรา</a></li>
+                    </ul>
+                    <!-- End Menu-list -->
+                </div>
+                <!-- End nav-menu-list -->
             </div>
+            <!-- End Container -->
+        </div>
+        <!-- End nav-bar-list -->
+        
+        <div class="big-body"></div>
+            <div class="image">
+                <img src="/photo/download.png" >
+            </div>
+            <br>
             <div class="track">
                 <div>
                     <a href="">หน้าหลัก</a>
-                    " กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ "
+                    > กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ 
                 </div>
+                <hr>
                 <div class="track-content">
-                    <h1 class="title">กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ</h1>
-                    <p> กรอกเลขพัสดุของ Kerry Express เพื่อติดตามสถานะล่าสุด และประมาณวัน เวลาในการจัดส่งพัสดุของท่าน </p>
+                    <h1 class="title">กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ</h1><br>
+                    <p> กรอกเลขพัสดุของ Kerry Express เพื่อติดตามสถานะล่าสุด และประมาณวัน เวลาในการจัดส่งพัสดุของท่าน </p><br>
                 </div>
                 <div class="input">
-                    <input id="input" type="text" value="" placeholder="ติดตามพัสดุ" maxlength="500" oninput="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'');">
-                    <i class="clear"></i><button id="#" class="search">ค้นหา</button>
+                    <input type="text" placeholder="ติดตามพัสดุ" maxlength="500" oninput="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'');">
+                    <input type="submit" name="" value="ค้นหา">
                   </div>
             </div>
         </div>
+        <br>
+        <section id="footer" >
+            <div class="container-fluid bg-dark ">
+                <p> Copyright 2021</p>
+            </div>
+        </section>
         
     </body>
 </html>
