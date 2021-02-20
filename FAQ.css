@@ -77,6 +77,6 @@ div.bg-light
     right: 25px;
     display: none;
 }
-
-  
-  
+.nav-link:hover{
+    background:lightskyblue;
+}
