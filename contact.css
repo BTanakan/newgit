@@ -148,3 +148,9 @@ ul.menulist li a {
 {
     color: #fff;
 }
+.back-to-top{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}

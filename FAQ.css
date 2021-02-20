@@ -46,7 +46,9 @@ ul.menu li a{
     margin-left: 150px;
     margin-right: 60px;
 }
-
+.nav-link:hover{
+    background:lightskyblue;
+}
 
 ul.menulist{
     align-items: center;
@@ -64,8 +66,13 @@ ul.menulist li a {
     color: white;
     text-decoration: none;
 }
-.container-fluid{
-    padding: 7% 15%;
+.container-fluid
+{
+    width: auto;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    text-align: center;
 }
 .back-to-top{
     position: fixed;
@@ -73,6 +80,4 @@ ul.menulist li a {
     right: 25px;
     display: none;
 }
-.nav-link:hover{
-    background:lightskyblue;
-}
+
