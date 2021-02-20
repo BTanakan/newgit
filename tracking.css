@@ -1,10 +1,81 @@
-body
-{
-    margin: 0;
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
-nav
+
+.container-web{
+    max-width: 1600px;
+    margin: 0 auto;
+    
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: flex-end;
+    background: #303133;
+    }  
+
+ul.menu{
+    height: 36px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+ul.menu li{
+    list-style: none;
+    margin-right: 30px;
+}
+
+ul.menu li a{
+    color: white;
+    text-decoration: none;
+}
+
+/* End Nav-bar */
+
+.nav-menu-list{
+    align-items: center;
+    display: flex;
+    background: #772CE8;
+}
+
+.nav-menu-list h1{
+    margin-left: 150px;
+    margin-right: 60px;
+}
+
+
+ul.menulist{
+    align-items: center;
+    display: flex;
+    height: 75px;
+}
+
+ul.menulist li {
+    margin-right: 150px;
+    list-style: none;
+}
+
+ul.menulist li a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* End nav-bar-menu */
+.image
 {
-    background: rgba(29,161,242,1.00);
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+}
+.image img
+{
+    width: 100%;
 }
 .track
 {
@@ -13,15 +84,60 @@ nav
     height: 320px;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background: #ffffff;
+    background: seashell;
 }
-.search
+/* search */
+.input
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input
+{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+input[type="text"]
+{
+    border-radius: 25px 0 0 25px;
+    width: 290px;
+    height: 40px;
+    padding: 0 25px;
+    border: none;
+    outline: none;
+}
+input[type="submit"]
+{
+    position: relative;
+    left: -5px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+    background: rgba(29,161,242,1.00);
+    border: none;
+    outline: none;
+}
+
+/* footer */
+.container-fluid
+{
+    width: auto;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    text-align: center;
+}
+.container-fluid p
 {
     color: #fff;
-    background: rgba(29,161,242,1.00);
-    border-color: rgba(0, 0, 0, 0);
-    border-radius: 9999px;
 }

@@ -64,10 +64,6 @@ ul.menulist li a {
     color: white;
     text-decoration: none;
 }
-div.bg-light
-{
-    background-color: magenta;
-}
 .container-fluid{
     padding: 7% 15%;
 }
