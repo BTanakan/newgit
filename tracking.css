@@ -66,16 +66,23 @@ ul.menulist li a {
 }
 
 /* End nav-bar-menu */
-.image
-{
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    display: flex;
-}
-.image img
-{
-    width: 100%;
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
 }
 .track
 {
@@ -88,7 +95,7 @@ ul.menulist li a {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background: seashell;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 /* search */
 .input
@@ -114,6 +121,7 @@ input[type="text"]
     padding: 0 25px;
     border: none;
     outline: none;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 input[type="submit"]
 {
