@@ -6,7 +6,7 @@
 }
 
 .container-web{
-    max-width: 1600px;
+    max-width: 1700px;
     margin: 0 auto;
     
 }
@@ -51,11 +51,11 @@ ul.menu li a{
 ul.menulist{
     align-items: center;
     display: flex;
-    height: 75px;
+    height: auto;
 }
 
 ul.menulist li {
-    margin-right: 150px;
+    margin-right: 125px;
     list-style: none;
 }
 
@@ -75,12 +75,13 @@ ul.menulist li a {
     background-position: center;
     background-size: cover;
     background-image: url(photo/unnamed.png) ;
+    background-size:cover;
 }
 .container-sign-in
 {
     position: relative;
     padding: 1rem;
-    margin: 5rem;
+    /* margin: 5rem; */
     flex-wrap: wrap;
     display: flex;
 }
@@ -92,14 +93,14 @@ ul.menulist li a {
 {
     background: #fff;
     width: 380px;
-    height: 480px;
+    height: 480px ;
     border-radius: 10%;
     position: relative;
     overflow: hidden;
 }
 .button-card
 {
-    width: 250px;
+    width: 275px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
@@ -119,7 +120,7 @@ ul.menulist li a {
     top: 0;
     left: 0;
     position: absolute;
-    width: 140px;
+    width: 150px;
     height: 100%;
     background: linear-gradient(to right, #109fff, #06ffff);
     border-radius: 30px;

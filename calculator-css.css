@@ -1,5 +1,5 @@
 *{
-    margin: 0 ;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -8,8 +8,6 @@
 .container-web{
     max-width: 1700px;
     margin: 0 auto;
-    justify-content: last baseline;
-    align-content: flex-end;
     
 }
 
@@ -42,6 +40,7 @@ ul.menu li a{
     align-items: center;
     display: flex;
     background: #772CE8;
+    
 }
 
 .nav-menu-list h1{
@@ -49,22 +48,23 @@ ul.menu li a{
     margin-right: 60px;
 }
 
-
 ul.menulist{
     align-items: center;
     display: flex;
-    height: 75px;
+    height: auto;
 }
 
 ul.menulist li {
-    margin-right: 150px;
+    margin-right: 125px ;
     list-style: none;
+    
 }
 
 ul.menulist li a {
-    font-size: 20px;
+    font-size:20px;
     color: white;
     text-decoration: none;
+    
 }
 
 /* End nav-bar-menu */
@@ -100,13 +100,13 @@ ul.menulist li a {
     text-align: center;
     font-size: 20px;
     height: 50px;
-    width: 200px;
+    width: auto;
 }
 
 .box-location select{
     font-size: 20px;
     height: 50px;
-    width: 200px;
+    width: auto;
 }
 
 .box-location{
