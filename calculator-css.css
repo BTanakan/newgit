@@ -6,8 +6,10 @@
 }
 
 .container-web{
-    max-width: 1600px;
+    max-width: 1700px;
     margin: 0 auto;
+    justify-content: last baseline;
+    align-content: flex-end;
     
 }
 
@@ -77,8 +79,8 @@ ul.menulist li a {
 
 .calculator-box{
     background-color: orangered;
-    height: 100px;   
-    width: 600px;
+    height: auto;   
+    width: auto;
     /* padding-top: 35px; */
 }
 
@@ -96,17 +98,36 @@ ul.menulist li a {
 
 .box-size select{
     text-align: center;
-    font-size: 30px;
-    height: 100px;
-    width: 300px;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
 }
 
 .box-location select{
-    font-size: 30px;
-    height: 100px;
-    width: 300px;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
 }
 
 .box-location{
     background-color: palegoldenrod;
+}
+/* footer */
+.container-fluid
+{
+    width: auto;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    text-align: center;
+}
+.container-fluid p
+{
+    color: #fff;
+}
+.back-to-top{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
 }
