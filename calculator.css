@@ -158,3 +158,36 @@ ul.nav-down-menu li a{
     border-radius: 5px;
 }
 
+footer{
+    height: 200px;
+    background-color: #303133;
+}
+
+.footer-bar{
+    display: flex;
+    background-color: #303133;
+    align-items: center;
+    height: 200px;
+    justify-content: space-around;
+}
+
+.footer-bar li{
+    list-style: none;
+}
+
+ul.footer li{
+    list-style: none;
+    display: flex;
+}
+
+ul.footer li a {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+.footer-bar cite{
+    color: white;
+}
+
