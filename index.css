@@ -390,3 +390,27 @@ ul.footer li a {
 .footer-bar cite{
     color: white;
 }
+
+.card-content{
+    position: relative;
+  animation-name: content;
+  animation-duration: 4s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes content {
+    from {top: 200px;}
+    to {top: 0px;}
+  }
+
+.announce{
+    position: relative;
+  animation-name: announce;
+  animation-duration: 2s;  
+  animation-fill-mode:forwards;
+}
+
+@keyframes announce {
+    from {right: 400px;}
+    to {right: 0px;}
+  }
