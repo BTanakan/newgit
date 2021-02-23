@@ -6,7 +6,7 @@
 }
 
 .container-web{
-    max-width: 1600px;
+    max-width: 1700px;
     margin: 0 auto;
     
 }
@@ -53,11 +53,11 @@ ul.menu li a{
 ul.menulist{
     align-items: center;
     display: flex;
-    height: 75px;
+    height: auto;
 }
 
 ul.menulist li {
-    margin-right: 150px;
+    margin-right: 125px;
     list-style: none;
 }
 
