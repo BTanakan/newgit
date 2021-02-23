@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- LINK bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" /> 
@@ -26,29 +28,26 @@
             </div>
         </div>
     </nav>
-    <!-- End nav-top -->
-    
-    <div class="nav-down">
-        <div class="container-web">
-            <div class="nav-down-down">
-                <ul class="logo">
-                    <li>
-                        <a href=""><img src="/photo/Flash-Express-1.png" alt="" width="200px" height="70px"></a>
-                    </li>
-                </ul>
-                <ul class="nav-down-menu">
-                    <li>
-                        <a href="">About Me</a>
-                        <a href="">Tracking</a>
-                        <a href="">Calculator</a>
-                        <a href="">FAQ</a>
-                        <a href="">Contact</a>
-                    </li>
-                </ul>
-            </div>
+
+    <!-- nav -->
+
+    <nav1>
+        <span class="nav-toggle" id="js-nav-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+
+        <div class="logo">
+            <a href=""><img src="photo/Flash-Express-1.png" alt="" width="200px" height="70px"></a>
         </div>
-    </div>
-    <!-- End nav-down -->
+        <ul1 id="js-menu">
+            <li><a href="#">เกี่ยวกับเรา</a></li>
+            <li><a href="tracking.html">เช็กพัสดุ</a></li>
+            <li><a href="calculator.html">ราคา</a></li>
+            <li><a href="FAQ.html">คำถามที่พบบ่อย</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+        </ul1>
+    </nav1>
+    <!-- End nav-bar-list -->
 
     <div class="header">
         <div class="container-web">
@@ -144,5 +143,7 @@
             </div>
         </div>
     </div>
+    <script src="navbar.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
