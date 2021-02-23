@@ -55,6 +55,7 @@ ul.menu-top li a{
 }
 
 .nav-down-down{
+    padding-top: 15px;
     display: flex;
     justify-content: center;
     justify-content: space-between;
@@ -126,3 +127,34 @@ ul.nav-down-menu li a{
     border: 1px solid #EBEEF5;
     border-radius: 5px;
 }
+
+.cost-box{
+    margin: 0 auto;
+    width: 70%;
+    height: 50px;
+    background: #F9FAFC;
+}
+
+.box1{
+    margin-top: 50px;
+}
+
+.enter-box{
+    margin-top: 50px;
+    width: 100%;
+}
+
+.enter{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.enter button{
+    height: 67px;
+    background-color: #F03F45;
+    font-size: 20px;
+    border: none;
+    border: 1px solid #EBEEF5;
+    border-radius: 5px;
+}
+
