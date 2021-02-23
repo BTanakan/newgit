@@ -106,8 +106,8 @@ ul.menulist li a {
     justify-content: center;
     text-align: center;
     padding: 50px 10px;
-    background: linear-gradient(to right, #109fff, #06ffff);
-    color: #fff;
+    background-color: #F03F45;
+    color: #000;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }    
@@ -136,23 +136,11 @@ ul.menulist li a {
     color: #fff;
     padding: 10px 20px;
     border-radius: 10px;
-    background: linear-gradient(to right, #109fff, #06ffff);
+    background: #F03F45;
     margin-top: 10px;
     text-decoration: none;
 }
 /* footer */
-.container-fluid
-{
-    width: auto;
-    height: auto;
-    background: rgb(0, 0, 0);
-    padding: 50px;
-    text-align: center;
-}
-.container-fluid p
-{
-    color: #fff;
-}
 .back-to-top{
     position: fixed;
     bottom: 25px;
