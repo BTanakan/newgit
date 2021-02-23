@@ -48,7 +48,7 @@ ul.menu-top li a{
 
 /* End nav-top */
 
-<<<<<<< HEAD
+
 nav1 {
     display: flex;
     height: auto;
@@ -148,6 +148,8 @@ ul1 li:first-child {
     background-color: #303133;
 }
 
+
+
 /* End header */
 
 .content{
@@ -168,7 +170,7 @@ ul1 li:first-child {
     margin-top: 90px;
 }
 
-.calculator a{
+.container-web a{
     text-decoration: none;
     color: #818191;
 }
@@ -181,3 +183,20 @@ ul1 li:first-child {
     border: 1px solid #EBEEF5;
     border-radius: 5px;
 }
+
+/* footer */
+.container-fluid
+{
+    width: auto;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    text-align: center;
+}
+.back-to-top{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
+
