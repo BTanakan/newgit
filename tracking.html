@@ -104,21 +104,22 @@
             </div>
         </div>
         <br>
-        <div class="track">
-            <div>
-                <a href="">หน้าหลัก</a>
-                > กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ 
+        <div class="container">
+          <div class="card " style="border-radius: 20px;">
+            <div class="card-header" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
+              <a href="">หน้าหลัก</a>
+              > กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ  
             </div>
-            <hr>
-            <div class="track-content">
-                <h1 class="title">กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ</h1><br>
+            <div class="card-body text-center">
+              <h1 class="title">กรอกเลขพัสดุของคุณเพื่อค้นหาพัสดุ</h1><br>
                 <p> กรอกเลขพัสดุของ Kerry Express เพื่อติดตามสถานะล่าสุด และประมาณวัน เวลาในการจัดส่งพัสดุของท่าน </p><br>
             </div>
-            <div class="input">
-                    <br><br><br><br>
-                    <input type="text" placeholder="ติดตามพัสดุ" maxlength="500" oninput="this.value=this.value.replace(/[\u4e00-\u9fa5]/g,'');">
-                    <input type="submit" name="" value="ค้นหา">
+            <div class="input-group mb-5">
+              <input type="text" class="form-control" placeholder="track number" aria-label="track number" aria-describedby="button-addon2">
+              <button type="button" class="btn-close" aria-label="Close"></button>
+              <button class="btn" type="button" id="button-addon2">Button</button>
             </div>
+          </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
         <!-- BOOTSTARP JS -->
@@ -128,7 +129,7 @@
           <div class="row">
               <div class="col-12 col-md">
                   <!--logo-->
-                  <img src="/photo/Flash-Express-1.png" width="200px" height="70px">
+                  <img src="photo/Flash-Express-1.png" width="200px" height="70px">
                   <small class="d-block mb-3 text-muted">© kerry</small>
                   <small class="d-block mb-3 text-muted">© copyright</small>
               </div>
