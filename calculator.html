@@ -11,22 +11,24 @@
     <!-- Font Awesome -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Calculator</title>
 </head>
 <body>
     <nav>
         <div class="container-web">
-            <div class="nav-menu">
-                <ul class="menu">
-                    <li> <a href="signin.html">เข้าสู่ระบบ/สมัครสมาชิก</a></li>
-                    <li> <a href="#">English</a> </li>
+            <div class="nav-bar-top">
+                <ul class="menu-top">
+                    <li>
+                        <a href="">Login</a>
+                        <a href="">Signup</a>
+                        <a href="">English</a>
+                    </li>
                 </ul>
-                <!-- End ul -->
-                </nav-menu>
-                <!-- End nav-menu -->
             </div>
-            <!-- End Container -->
+        </div>
     </nav>
+<<<<<<< HEAD
     <!-- nav -->
     
       
@@ -51,53 +53,57 @@
         
         <!-- End Container -->
 
-    <div class="header-pic">
+    <div class="header">
         <div class="container-web">
-            <h1>pic</h1>
-        </div>
-        <!-- End container -->
-    </div>
-    <!-- End header-pic -->
-
-    <div class="calculator-box">
-        <div class="container-web">
-
-            <div class="box-flex">
-                <div class="box-size">
-                    <select name="box-size" id="box-size">
-                        <option value="Envelop">Envelop / Mini</option>
-                        <option value="Seal">Seal Bag / S</option>
-                        <option value="S">S+</option>
-                        <option value="M">M</option>
-                        <option value="M+">M+</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
-                </div>
-                <!-- End box-size -->
-    
-                <div class="box-location">
-                    <select name="Box-location" id="Box-location">
-                        <option value="BANGKOK">BANGKOK</option>
-                        <option value="UPCOUNTRY">UPCOUNTRY</option>
-                    </select>
-                </div>
-                <!-- End location -->
+            <div class="pic-header">
+                
             </div>
-
         </div>
-        <!-- End container -->
     </div>
-    <!-- End calculator-box -->
+    <!-- End header -->
+
+    <div class="content">
+        <div class="container-web">
+            <div class="calculator">
+                <a href="">Home</a> <span>>Check Flash Express Price, Estimate Your Shipping Cost</span>
+                <hr>
+
+               <div class="box-pack">
+                <select name="cal" id="cal" >
+                    <option value="pack" disabled selected >Package</option>
+                    <option value="Eva">Envelop / Mini</option>
+                    <option value="S">Seal Bag / S</option>
+                    <option value="S+">S+</option>
+                    <option value="M">M</option>
+                    <option value="M+">M+</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+                <select name="location" id="location" >
+                    <option value="loca" disabled selected >location</option>
+                    <option value="BANGKOK">BANGKOK</option>
+                    <option value="UPCOUNTRY">UPCOUNTRY</option>
+                </select>
+               </div>
+            </div>
+        </div>
+    </div>
+      
+        
+
+
+
+
+
+
+
+
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="navbar.js"></script>
     <br><br><br>
-    <section id="footer" >
-        <div class="container-fluid bg-dark ">
-            <p class="text-white text-center"><i class="far fa-copyright text-white"></i> Copyright 2021</p>
-        </div>
-    </section>
         <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
           <script>
           $(document).ready(function(){

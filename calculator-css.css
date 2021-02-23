@@ -1,41 +1,54 @@
 *{
-    margin: 0;
+    margin: 0 ;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container-web{
-    max-width: 1700px;
+    max-width: 1200px;
     margin: 0 auto;
-    
+    /* background-color: brown; */
+    background-color: #FFFFFF;
 }
 
-.nav-menu{
+nav{
+    background-color: #303133;
+}
+
+.nav-bar-top{
+    background-color: #303133;
+}
+
+.nav-bar-top h1{
+    color: white;
+}
+
+.nav-bar-top{
+    height: 35px;
     display: flex;
     justify-content: flex-end;
-    background: #303133;
-    }  
-
-ul.menu{
-    height: 36px;
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
 }
 
-ul.menu li{
+ul.menu-top{
+    margin-top: 7px;
+}
+
+ul.menu-top li{
     list-style: none;
-    margin-right: 30px;
 }
 
-ul.menu li a{
+ul.menu-top li a{
     color: white;
     text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 5px;
 }
 
-/* End Nav-bar */
+/* End nav-top */
 
+<<<<<<< HEAD
 nav1 {
     display: flex;
     height: auto;
@@ -128,67 +141,43 @@ ul1 li:first-child {
 }
 
 /* End nav-bar-menu */
-/* End nav-bar-menu */
 
-.header-pic{
+.header{
     width: 100%;
-    background-color: #303133;
     height: 500px;
+    background-color: #303133;
 }
 
-/* End header-pic */
+/* End header */
 
-.calculator-box{
-    background-color: orangered;
-    height: auto;   
-    width: auto;
-    /* padding-top: 35px; */
+.content{
+    height: 500px;
+    background-color: #FFFFFF;
 }
 
-.box-flex{
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    box-shadow: 5px 5px 8px 0px #888888;
-}
+.calculator{
+    margin-top: 10px;
+    width: 100%;
+    font-weight: bold;
 
-.box-size{
-    background-color: orchid;
     
 }
 
-.box-size select{
-    text-align: center;
-    font-size: 20px;
-    height: 50px;
-    width: auto;
+.box-pack{
+    display: flex;
+    margin-top: 90px;
 }
 
-.box-location select{
-    font-size: 20px;
-    height: 50px;
-    width: auto;
+.calculator a{
+    text-decoration: none;
+    color: #818191;
 }
 
-.box-location{
-    background-color: palegoldenrod;
-}
-/* footer */
-.container-fluid
-{
-    width: auto;
-    height: auto;
-    background: rgb(0, 0, 0);
-    padding: 50px;
-    text-align: center;
-}
-.container-fluid p
-{
-    color: #fff;
-}
-.back-to-top{
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
+.calculator select{
+    height: 50px;
+    width: 50%;
+    font-size: 20px;
+    border: none;
+    border: 1px solid #EBEEF5;
+    border-radius: 5px;
 }
