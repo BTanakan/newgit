@@ -42,35 +42,33 @@
         </nav1>
             
         <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column bg">
-            <div class="px-3">
-              
-              
+            <div class="container-card">
+                <div class="card-container" style="border-radius: 20px; width: 25rem;">
+                    <div class="card-content text-center">
+                        <div class="button-card">
+                            <div id="btn"></div>
+                            <button type="button" class="toggle-btn" onclick="login()">เข้าสู่ระบบ</button>
+                            <button type="button" class="toggle-btn" onclick="signup()">สมัครสมาชิก</button>
+                        </div>
+                        <div class="card-icon text-center">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-google"></i>
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <form id="login" class="input-card text-center">
+                            <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
+                            <input type="text" class="text-card" placeholder="รหัสผ่าน">
+                            <button type="submit" class="submit-btn">เข้าสู่ระบบ</button>
+                        </form>
+                        <form id="signup" class="input-card text-center">
+                            <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
+                            <input type="text" class="text-card" placeholder="อีเมล์">
+                            <input type="text" class="text-card" placeholder="รหัสผ่าน">
+                            <input type="checkbox" class="chech-box"><span>ยืนยัน </span>
+                            <button type="submit" class="submit-btn">สมัครสมาชิก</button>
+                        </form>
+                    </div>
             </div>
-            <div class="card-container w-25" style="border-radius: 20px;">
-                <div class="card-content text-success">
-                    <div class="button-card">
-                        <div id="btn"></div>
-                        <button type="button" class="toggle-btn" onclick="login()">เข้าสู่ระบบ</button>
-                        <button type="button" class="toggle-btn" onclick="signup()">สมัครสมาชิก</button>
-                    </div>
-                    <div class="card-icon">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-google"></i>
-                        <i class="fab fa-apple"></i>
-                    </div>
-                    <form id="login" class="input-card ">
-                        <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
-                        <input type="text" class="text-card" placeholder="รหัสผ่าน">
-                        <button type="submit" class="submit-btn">เข้าสู่ระบบ</button>
-                    </form>
-                    <form id="signup" class="input-card">
-                        <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
-                        <input type="text" class="text-card" placeholder="อีเมล์">
-                        <input type="text" class="text-card" placeholder="รหัสผ่าน">
-                        <input type="checkbox" class="chech-box"><span>ยืนยัน </span>
-                        <button type="submit" class="submit-btn">สมัครสมาชิก</button>
-                    </form>
-                </div>
           </div>    
         
         <!-- BOOTSTARP JS -->

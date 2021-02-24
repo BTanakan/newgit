@@ -154,14 +154,14 @@ ul1 li:first-child {
     display: flex;
 } */
 /* card */
-/* .container-card
+.container-card
 {
     display: flex;
     justify-content: center;
     align-items: center; 
     flex-wrap: wrap;
     background-color: #fff;
-} */
+}
 .body-card
 {
     position: relative;

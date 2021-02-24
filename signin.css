@@ -149,11 +149,18 @@ ul1 li:first-child {
     background-image: url(photo/unnamed.png) ;
     background-size:cover;
 }
-
+.container-card
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 .card-container
 {
     background: #fff;
     height: 70%;
+    width: 25%;
     position: relative;
     overflow: hidden;
     justify-content: center;
@@ -162,7 +169,7 @@ ul1 li:first-child {
 .button-card
 {
     width: 275px;
-    margin: 35px auto;
+    margin: 10% auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
@@ -189,7 +196,7 @@ ul1 li:first-child {
 }
 .card-icon
 {
-    margin: 30px auto;
+    margin: 35px auto;
     text-align: center;
 }
 .card-icon i
@@ -204,17 +211,16 @@ ul1 li:first-child {
     position: absolute;
     width: 280px;
     transition: .5s;
-    left: 60px;
+    left: 50px;
 }
 .text-card
 {
     width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
+    padding: 3% 0;
+    margin: 3% 0;
     border-left: 0;
     border-top: 0;
     border-right: 0;
-    border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
 }
@@ -236,9 +242,9 @@ ul1 li:first-child {
 }
 #login
 {
-    left: 50px;
+    left: auto;
 }
 #signup
 {
-    left: 450px;
+    left: auto;
 }
