@@ -144,7 +144,7 @@ ul1 li:first-child {
 .header{
     width: 100%;
     height: 500px;
-    background-color: #303133;
+    background-color: #F03F45;
 }
 
 /* End header */
@@ -217,3 +217,14 @@ ul1 li:first-child {
     display: none;
 }
 
+.header{
+    position: relative;
+  animation-name: header;
+  animation-duration: 1s;  
+  animation-fill-mode:forwards;
+}
+
+@keyframes header {
+    from {bottom: 400px;}
+    to {bottom: 0px;}
+  }

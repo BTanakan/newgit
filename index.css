@@ -56,6 +56,7 @@ nav1 {
     align-items: center;
     position: relative;
     flex-direction: column;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16);
 }
 
 .nav-toggle { 
@@ -142,9 +143,13 @@ ul1 li:first-child {
 /* End nav down */
 
 .header{
+    background-color: #F03F45;
+}
+
+.pic-header{
     width: 100%;
     height: 500px;
-    background-color: #303133;
+    background-color: red;
 }
 
 
@@ -481,3 +486,129 @@ ul.footer li a {
     right: 25px;
     display: none;
 }
+
+nav1{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16);
+}
+
+.header{
+    position: relative;
+  animation-name: header;
+  animation-duration: 1s;  
+  animation-fill-mode:forwards;
+}
+
+.box-3{
+    display: none;
+}
+
+@keyframes header {
+    from {bottom: 400px;}
+    to {bottom: 0px;}
+  }
+
+  .input-box-2{
+      display: none;
+  }
+
+
+/* End-input-box */
+
+  @media screen and (max-width: 610px){
+
+    .card-content{
+        display: inline;
+        width: 90%;
+    }
+    
+    .box{
+        display: none;
+    }
+
+    .content-box-2{
+        margin-top: 10px;
+        margin-bottom: 60px;
+    }
+
+    .input-box-2{
+        margin-top: 50px;
+        margin-left: 10px;
+    width: 900px;
+    width: 50%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    box-shadow: 5px 10px 20px 1px #7e8186;
+    border-radius: 10px;
+    display: inline;
+    }
+
+    .input-box-2 i{
+        font-size: 30px;
+        color: #606266;
+        
+    }
+    
+    .input-box-2 input{
+        width: 35%;
+        height: 67px;
+        border: none;
+        font-size: 30px;
+        color: #606266;
+        overflow: hidden;
+    }
+    
+    .input-box-2 button{
+        height: 67px;
+        background-color: #F03F45;
+        font-size: 20px;
+        border: none;
+    
+    } 
+
+    .cost-box{
+        display: inline;
+    }
+    
+  }
+
+
+  @media screen and (max-width: 319px){
+    .input-box-2{
+        margin-top: 50px;
+        margin-left: 10px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    box-shadow: 5px 10px 20px 1px #7e8186;
+    border-radius: 10px;
+    display: inline;
+    }
+
+    .input-box-2 i{
+        font-size: 30px;
+        color: #606266;
+        
+    }
+    
+    .input-box-2 input{
+        width: 10%;
+        height: 67px;
+        border: none;
+        font-size: 30px;
+        color: #606266;
+        overflow: hidden;
+    }
+    
+    .input-box-2 button{
+        height: 67px;
+        background-color: #F03F45;
+        font-size: 20px;
+        border: none;
+    
+    } 
+  }
+
+  
