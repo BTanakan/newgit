@@ -109,7 +109,7 @@ ul1 li:first-child {
     display: flex;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
     nav1 {
         height: 80px;
         flex-direction: row;
@@ -138,6 +138,38 @@ ul1 li:first-child {
     .nav-toggle {
         display: none;
     }
+    div.aboutme p{
+        font-size: x-large;
+    }
+    div.aboutme h2{
+        font-size: x-large;
+    }
+    div.aboutme-item-1 img{
+        margin-top: 80px;
+        margin-left: 90px;
+    }
+    div.aboutme-item-2 img{
+        margin-top: 80px;
+        margin-left: 90px;
+    }
+    div.aboutme-item-3 img{
+        margin-top: 80px;
+        margin-left: 90px;
+    }
+}
+@media screen and (min-width:700px) and (max-width:799px){
+    div.aboutme-item-1 img{
+        margin-top: 80px;
+        margin-left: 60px;
+    }
+    div.aboutme-item-2 img{
+        margin-top: 80px;
+        margin-left: 60px;
+    }
+    div.aboutme-item-3 img{
+        margin-top: 80px;
+        margin-left: 60px;
+    }
 }
 
 /* End nav down */
@@ -164,11 +196,15 @@ ul1 li:first-child {
 .aboutme p{
     text-align: center;
     color: rgb(229, 226, 226);
+    font-size: small;
+}
+.aboutme h2{
+    text-align: center;
+    color: rgb(229, 226, 226);
+    font-size: small;
 }
 
-.aboutme-item-1 i {
-    font-size: 50px;
-}
+
 
 .aboutme-item-1{
     width: 80%;
@@ -187,7 +223,7 @@ ul1 li:first-child {
 
 .aboutme-item-1 img{
     margin-top: 80px;
-    margin-left: 100px;
+    margin-left: 30px;
 }
 
 .aboutme-item-2{
@@ -207,7 +243,7 @@ ul1 li:first-child {
 
 .aboutme-item-2 img{
     margin-top: 80px;
-    margin-left: 100px;
+    margin-left: 30px;
 }
 
 .aboutme-item-3{
@@ -227,9 +263,17 @@ ul1 li:first-child {
 
 .aboutme-item-3 img{
     margin-top: 80px;
-    margin-left: 100px;
+    margin-left: 30px;
 }
-
+/* footer */
+.container-fluid
+{
+    width: auto;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    text-align: center;
+}
 .back-to-top{
     position: fixed;
     bottom: 25px;
@@ -248,3 +292,7 @@ ul1 li:first-child {
     from {bottom: 400px;}
     to {bottom: 0px;}
   }
+.container-web a{
+    text-decoration: none;
+    color: #818191;
+}

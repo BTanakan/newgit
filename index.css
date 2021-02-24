@@ -153,6 +153,8 @@ ul1 li:first-child {
 }
 
 
+
+
 .input-box{
     margin-left: 150px;
     /* width: 900px; */
@@ -173,7 +175,7 @@ ul1 li:first-child {
 }
 
 .input-box input{
-    width: 640px;
+    width: 90%;
     height: 67px;
     border: none;
     font-size: 30px;
@@ -182,7 +184,7 @@ ul1 li:first-child {
 }
 
 .input-box button{
-    width: 100px;
+    width: 10%;
     height: 67px;
     background-color: #F03F45;
     font-size: 20px;
@@ -379,7 +381,7 @@ ul1 li:first-child {
 }
 
 .weight input{
-    width: 10%;
+    width: 75%;
     height: 40px;
     font-size: 20px;
     border: none;
@@ -387,7 +389,7 @@ ul1 li:first-child {
 }
 
 .kg{
-    margin-left: 370px;
+    /* margin-left: 370px; */
 }
 
 .value{
@@ -574,7 +576,7 @@ nav1{
   }
 
 
-  @media screen and (max-width: 319px){
+  @media screen and (max-width: 331px){
     .input-box-2{
         margin-top: 50px;
         margin-left: 10px;
@@ -610,5 +612,32 @@ nav1{
     
     } 
   }
+
+  .btton button{
+      display: none;
+        height: 67px;
+        background-color: #F03F45;
+        font-size: 20px;
+        border: none;
+  }
+
+  @media screen and (max-width: 331px){
+     .input-box-2{
+        width: 10%;
+        display: inline;
+    } 
+
+    
+    .enter-track{
+        display: none;
+    }
+    .btton {
+        display: inline;
+        height: 67px;
+        background-color: #F03F45;
+        font-size: 20px;
+        border: none;
+    }
+}
 
   

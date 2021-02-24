@@ -101,8 +101,6 @@ ul1 li:first-child {
     margin-top: 0;
 }
 
-
-
 .active {
     display: flex;
 }
@@ -227,6 +225,14 @@ input[type="submit"]
 }
 
 /* footer */
+.container-fluid
+{
+    width: auto;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    text-align: center;
+}
 .back-to-top{
     position: fixed;
     bottom: 25px;
