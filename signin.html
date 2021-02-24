@@ -30,10 +30,10 @@
             </span>
   
             <div class="logo">
-              <img src="photo/Flash-Express-1.png" width="200px" height="70px">
+              <img src="photo/logo.png" width="100%">
             </div>
             <ul1 id="js-menu">
-                <li><a href="#">About me</a></li>
+                <li><a href="aboutme.html">About me</a></li>
                 <li><a href="tracking.html" ">Tracking</a></li>
                 <li><a href="calculator.html">Price</a></li>
                 <li><a href="FAQ.html" >FAQ</a></li>
@@ -41,40 +41,41 @@
             </ul1>
         </nav1>
             
-        <div class="background-sign-in ">
+        <div class="background-sign-in "></div><!--ห่วงงงงงงงงงงงงงงงงง-->
             <div class="container-sign-in">
                 <div class="content-sign-in">
                     <h2>พัสดุเยอะแค่ไหน ก็จัดการได้</h2>
                     <p>ระบบจัดการพัสดุที่จะช่วยให้การจัดส่งพัสดุของคุณเป็นเรื่องง่าย <br>สะดวก รวดเร็ว และเข้าถึงได้ทุกที่สมัครฟรีวันนี้ ไม่มีค่าใช้จ่าย</p>
                 </div>
-                <div class="card-sign-in">
-                    <div class="card-content">
-                        <div class="button-card">
-                            <div id="btn"></div>
-                            <button type="button" class="toggle-btn" onclick="login()">เข้าสู่ระบบ</button>
-                            <button type="button" class="toggle-btn" onclick="signup()">สมัครสมาชิก</button>
-                        </div>
-                        <div class="card-icon">
-                            <i class="fab fa-facebook"></i>
-                            <i class="fab fa-google"></i>
-                            <i class="fab fa-apple"></i>
-                        </div>
-                        <form id="login" class="input-card ">
-                            <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
-                            <input type="text" class="text-card" placeholder="รหัสผ่าน">
-                            <button type="submit" class="submit-btn">เข้าสู่ระบบ</button>
-                        </form>
-                        <form id="signup" class="input-card">
-                            <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
-                            <input type="text" class="text-card" placeholder="อีเมล์">
-                            <input type="text" class="text-card" placeholder="รหัสผ่าน">
-                            <input type="checkbox" class="chech-box"><span>ยืนยัน </span>
-                            <button type="submit" class="submit-btn">สมัครสมาชิก</button>
-                        </form>
+            </div>    
+            <div class="card" style="border-radius: 20px;">
+                <div class="card-content text-success">
+                    <div class="button-card">
+                        <div id="btn"></div>
+                        <button type="button" class="toggle-btn" onclick="login()">เข้าสู่ระบบ</button>
+                        <button type="button" class="toggle-btn" onclick="signup()">สมัครสมาชิก</button>
                     </div>
+                    <div class="card-icon">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-google"></i>
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <form id="login" class="input-card ">
+                        <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
+                        <input type="text" class="text-card" placeholder="รหัสผ่าน">
+                        <button type="submit" class="submit-btn">เข้าสู่ระบบ</button>
+                    </form>
+                    <form id="signup" class="input-card">
+                        <input type="text" class="text-card" placeholder="ชื่อผู้ใช้">
+                        <input type="text" class="text-card" placeholder="อีเมล์">
+                        <input type="text" class="text-card" placeholder="รหัสผ่าน">
+                        <input type="checkbox" class="chech-box"><span>ยืนยัน </span>
+                        <button type="submit" class="submit-btn">สมัครสมาชิก</button>
+                    </form>
                 </div>
             </div>
-        </div>
+            
+        
         <!-- BOOTSTARP JS -->
     <script src="js/bootstrap.min.js"></script>
     <script src="navbar.js"></script>

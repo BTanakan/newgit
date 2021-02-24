@@ -147,73 +147,91 @@ ul1 li:first-child {
     background-color: #303133;
 }
 
-/* End header */
-
-.content{
+.aboutme-box{
     height: 500px;
-    background-color: #FFFFFF;
 }
 
-.calculator{
-    margin-top: 10px;
-    width: 100%;
-    font-weight: bold;
-
+.aboutme{
+    margin-top: 140px;
+    height: 500px;
+    background-color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 33.3333333333% 33.3333333333% 33.3333333333%;
     
 }
 
-.box-pack{
-    display: flex;
-    margin-top: 90px;
+.aboutme p{
+    text-align: center;
+    color: rgb(229, 226, 226);
 }
 
-.calculator a{
-    text-decoration: none;
-    color: #818191;
+.aboutme-item-1 i {
+    font-size: 50px;
 }
 
-.calculator select{
-    height: 50px;
-    width: 50%;
-    font-size: 20px;
-    border: none;
-    border: 1px solid #EBEEF5;
-    border-radius: 5px;
-}
-
-.cost-box{
+.aboutme-item-1{
+    width: 80%;
+    height: 500px;
+    background-color: #F44A4E;
     margin: 0 auto;
-    width: 70%;
-    height: 50px;
-    background: #F9FAFC;
+    box-shadow: 5px 10px 20px 1px #7e8186;
+    border-radius: 10px;
 }
 
-.box1{
-    margin-top: 50px;
+.aboutme-item-1 h2{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(229, 226, 226);
 }
 
-.enter-box{
-    margin-top: 50px;
-    width: 100%;
+.aboutme-item-1 img{
+    margin-top: 80px;
+    margin-left: 100px;
 }
 
-.enter{
-    display: flex;
-    justify-content: flex-end;
+.aboutme-item-2{
+    width: 80%;
+    height: 500px;
+    background-color: #F44A4E;
+    margin: 0 auto;
+    box-shadow: 5px 10px 20px 1px #7e8186;
+    border-radius: 10px;
 }
 
-.enter button{
-    height: 67px;
-    background-color: #F03F45;
-    font-size: 20px;
-    border: none;
-    border: 1px solid #EBEEF5;
-    border-radius: 5px;
+.aboutme-item-2 h2{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(229, 226, 226);
 }
+
+.aboutme-item-2 img{
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+.aboutme-item-3{
+    width: 80%;
+    height: 500px;
+    background-color: #F44A4E;
+    margin: 0 auto;
+    box-shadow: 5px 10px 20px 1px #7e8186;
+    border-radius: 10px;
+}
+
+.aboutme-item-3 h2{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(229, 226, 226);
+}
+
+.aboutme-item-3 img{
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
 .back-to-top{
     position: fixed;
     bottom: 25px;
     right: 25px;
     display: none;
 }
-

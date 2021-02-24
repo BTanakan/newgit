@@ -162,12 +162,11 @@ ul1 li:first-child {
 {
     margin: auto;
 }
-.card-sign-in
+.card
 {
     background: #fff;
     width: 380px;
     height: 480px ;
-    border-radius: 10%;
     position: relative;
     overflow: hidden;
 }

@@ -12,6 +12,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="photo/ico.ico" type="image/x-icon">
     <title>Calculator</title>
 </head>
 <body>
@@ -35,10 +36,10 @@
         </span>
 
         <div class="logo">
-            <img src="photo/Flash-Express-1.png" width="200px" height="70px">
+            <img src="photo/logo.png" width="200px" height="70px">
         </div>
         <ul1 id="js-menu">
-            <li><a href="#">About me</a></li>
+            <li><a href="aboutme.html">About me</a></li>
             <li><a href="tracking.html">Tracking</a></li>
             <li><a href="#" style="color: black;">Price</a></li>
             <li><a href="FAQ.html">FAQ</a></li>
@@ -80,24 +81,68 @@
                     <option value="UPCOUNTRY">UPCOUNTRY</option>
                 </select>
                </div>
+               <!-- End box-pack -->
+
+               <div class="enter-box">
+                   <div class="container-web">
+                       <div class="enter">
+                           <button class="btnenter">Submit</button>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="cost-box">
+                   <div class="container-web">
+                       <div class="box1">
+
+                       </div>
+                   </div>
+               </div>
+               <!-- End cost-box -->
             </div>
         </div>
     </div>
-      
-        
 
-
-
-
-
-
-
-
-    <!-- </> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <!-- BOOTSTARP JS -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="navbar.js"></script>
+
     <br><br><br>
-        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+    <footer class="container-fluid py-5 bg-dark">
+        <div class="row">
+            <div class="col-12 col-md">
+                <!--logo-->
+                <img src="photo/logo.png" width="100%">
+                <small class="d-block mb-3 text-muted justify-content-center align-content-center">© copyright</small>
+            </div>
+            <div class="col-6 col-md" style="color:#fff;">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Cool stuff</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md " style="color:#fff;">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Resource name</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md" style="color:#fff;">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Business</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md" style="color:#fff;">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary" href="#">Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
           <script>
           $(document).ready(function(){
         $(window).scroll(function () {
@@ -115,7 +160,7 @@
             return false;
           });
       });
-    </script> -->
+    </script>
 
 </body>
 </html>
