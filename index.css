@@ -466,3 +466,18 @@ ul.footer li a {
     from {right: 400px;}
     to {right: 0px;}
   }
+
+  .container-fluid
+{
+    width: auto;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 50px;
+    text-align: center;
+}
+.back-to-top{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}

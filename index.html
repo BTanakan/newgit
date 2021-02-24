@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" /> 
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="photo/ico.ico" type="image/x-icon">
     <title>Bolt Psu Express</title>
 </head>
@@ -148,26 +149,63 @@
     </div>
     <!-- End -box -3 -->
 
-    <footer>
-        <div class="container-web">
-            <div class="footer-bar">
-                <ul class="footer-logo">
-                    <li>
-                        <img src="photo/logo.png" alt="" width="100%">
-                    </li>
-                </ul>
-
-                <ul class="footer">
-                    <li>
-                        <a href="#">About Me</a>
-                        <a href="#">Team</a>
-                    </li>
-                </ul>
-                <cite> Copyright&#169; 2021 Bolt PSU Express </cite> 
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <!-- BOOTSTARP JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="navbar.js"></script>
+    <br><br><br>
+    <footer class="container-fluid py-5 bg-dark">
+      <div class="row">
+          <div class="col-12 col-md">
+              <!--logo-->
+              <img src="photo/logo.png" width="100%">
+              <small class="d-block mb-3 text-muted">© copyright</small>
+          </div>
+          <div class="col-6 col-md" style="color:#fff;">
+              <h5>Features</h5>
+              <ul class="list-unstyled text-small">
+                  <li><a class="link-secondary" href="#">Cool stuff</a></li>
+              </ul>
+          </div>
+          <div class="col-6 col-md " style="color:#fff;">
+              <h5>Resources</h5>
+              <ul class="list-unstyled text-small">
+                  <li><a class="link-secondary" href="#">Resource name</a></li>
+              </ul>
+          </div>
+          <div class="col-6 col-md" style="color:#fff;">
+              <h5>Resources</h5>
+              <ul class="list-unstyled text-small">
+                  <li><a class="link-secondary" href="#">Business</a></li>
+              </ul>
+          </div>
+          <div class="col-6 col-md" style="color:#fff;">
+              <h5>About</h5>
+              <ul class="list-unstyled text-small">
+                  <li><a class="link-secondary" href="#">Team</a></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+          <script>
+          $(document).ready(function(){
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+              $('#back-to-top').fadeIn();
+            } else {
+              $('#back-to-top').fadeOut();
+            }
+          });
+          // scroll body to 0px on click
+          $('#back-to-top').click(function () {
+            $('body,html').animate({
+              scrollTop: 0
+            }, 400);
+            return false;
+          });
+      });
+    </script>
     
 </body>
 </html>
