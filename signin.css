@@ -194,7 +194,7 @@ ul1 li:first-child {
 }
 .button-card
 {
-    width: 275px;
+    width: 260px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
@@ -214,7 +214,7 @@ ul1 li:first-child {
     top: 0;
     left: 0;
     position: absolute;
-    width: 150px;
+    width: 135px;
     height: 100%;
     background: #f03f45;
     border-radius: 30px;
@@ -229,7 +229,7 @@ ul1 li:first-child {
 {
     width: 30px;
     margin: 0 5px;
-    color: cornflowerblue;
+    color:  #f03f45;
 }
 .input-card
 {   
