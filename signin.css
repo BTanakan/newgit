@@ -107,7 +107,7 @@ ul1 li:first-child {
     display: flex;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
     nav1 {
         height: 80px;
         flex-direction: row;
@@ -136,12 +136,30 @@ ul1 li:first-child {
     .nav-toggle {
         display: none;
     }
+
+    div.card
+    {   
+        
+        background: #fff;
+        width: 380px;
+        justify-items: center;
+    }
+    form.input-card
+    {   
+        width: 340px;
+    }
+    button.submit-btn
+    {   
+        margin: auto 60px;
+    }
+    
 }
 
 /* End nav-bar-menu */
 /* sign in */
-.bg
-{
+.background-sign-in
+{   
+    
     width: 100%;
     height: 100%;
     position: absolute;
@@ -149,27 +167,33 @@ ul1 li:first-child {
     background-image: url(photo/unnamed.png) ;
     background-size:cover;
 }
-.container-card
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-.card-container
-{
-    background: #fff;
-    height: 70%;
-    width: 25%;
+.container-sign-in
+{   
     position: relative;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
+    padding: 1rem;
+    /* margin: 5rem; */
+    flex-wrap: wrap;
+    display: flex;
+    
+}
+.content-sign-in
+{
+    margin: auto;
+}
+.card
+{   
+    
+    background: #fff;
+    width: 100%;
+    height: 480px ;
+    position: relative;
+    overflow:hidden;
+    
 }
 .button-card
 {
     width: 275px;
-    margin: 10% auto;
+    margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
@@ -196,7 +220,7 @@ ul1 li:first-child {
 }
 .card-icon
 {
-    margin: 35px auto;
+    margin: 30px auto;
     text-align: center;
 }
 .card-icon i
@@ -206,31 +230,32 @@ ul1 li:first-child {
     color: cornflowerblue;
 }
 .input-card
-{
+{   
     top: 150px;
     position: absolute;
     width: 280px;
-    transition: .5s;
-    left: 50px;
+    transition: .5s; 
 }
 .text-card
 {
-    width: 100%;
-    padding: 3% 0;
-    margin: 3% 0;
+    width: 80%;
+    padding: 10px 0;
+    margin: 5px 0;
     border-left: 0;
     border-top: 0;
     border-right: 0;
+    border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
 }
 .submit-btn
-{
-    width: 85%;
+{   
+    
+    width: 150px;
     padding: 10px 30px;
     cursor: pointer;
     display: block;
-    margin: auto;
+    margin: auto 40px;
     background: #f03f45;
     border: 0;
     outline: none;
@@ -242,9 +267,9 @@ ul1 li:first-child {
 }
 #login
 {
-    left: auto;
+    left: 50px;
 }
 #signup
 {
-    left: auto;
+    left: 450px;
 }
