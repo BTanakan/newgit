@@ -152,7 +152,9 @@ ul1 li:first-child {
     {   
         margin: auto 60px;
     }
-    
+    div.card {
+        left: 38%;
+    }
 }
 
 /* End nav-bar-menu */
@@ -182,7 +184,7 @@ ul1 li:first-child {
 }
 .card
 {   
-    
+    left: 0;
     background: #fff;
     width: 100%;
     height: 480px ;
