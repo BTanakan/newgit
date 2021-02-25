@@ -148,7 +148,7 @@ ul1 li:first-child {
 
 .pic-header{
     width: 100%;
-    height: 500px;
+    height: 100%;
     background-color: red;
 }
 
@@ -500,15 +500,14 @@ nav1{
   animation-fill-mode:forwards;
 }
 
-.box-3{
-    display: none;
-}
-
 @keyframes header {
     from {bottom: 400px;}
     to {bottom: 0px;}
   }
 
+  .box-3{
+    display: none;
+  }
   .input-box-2{
       display: none;
   }
