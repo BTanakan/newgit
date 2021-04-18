@@ -1,3 +1,5 @@
+<?php session_start();
+include("include/config.php");?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,14 +66,14 @@
                         <i class="fab fa-apple"></i>
                     </div>
                     <form id="login" class="input-card">
-                        <input type="text" class="text-card" placeholder="Username">
-                        <input type="text" class="text-card" placeholder="Password">
+                        <input type="text" class="text-card" name="txtuse" placeholder="Username">
+                        <input type="password" class="text-card" name="txtps" placeholder="Password">
                         <button type="submit" class="submit-btn">Log in</button>
                     </form>
                     <form id="signup" class="input-card">
-                        <input type="text" class="text-card" placeholder="Username">
-                        <input type="text" class="text-card" placeholder="Email">
-                        <input type="text" class="text-card" placeholder="Password"><br>
+                        <input type="text" class="text-card" name="txtuse" placeholder="Username">
+                        <input type="email" class="text-card" name="txtmail" placeholder="Email">
+                        <input type="password" class="text-card" name="txtps" placeholder="Password"><br>
                         <input type="checkbox" class="chech-box"><span>Agree </span>
                         <button type="submit" class="submit-btn">Sign up</button>
                     </form>
@@ -81,6 +83,10 @@
             
         
         <!-- BOOTSTARP JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="js/bootstrap.min.js"></script>
     <script src="navbar.js"></script>
         <script>
@@ -99,5 +105,40 @@
                 z.style.left ="0";
             }
         </script>
+
+        <script>
+        $(function() {
+            $("#sign").submit(function() {
+                event.preventDefault();
+                $.ajax({
+                    url: "signup.php",
+                    type: "post",
+                    data: $("form#frmsignup").serialize(),
+                    success: function(data) {
+                    },
+                    error: function(data) {
+                        console.log("An error accured." + data);
+                    }
+                });
+            });
+
+            $("#log").submit(function() {
+                event.preventDefault();
+                $.ajax({
+                    url: "login.php",
+                    type: "post",
+                    data: $("login").serialize(),
+                    success: function(data) {
+                    },
+                    error: function(data) {
+                        console.log("An error accured." + data);
+                    }
+                });
+            });
+
+
+    });
+    </script>
     </body>
 </html>
+<?php include("include/close.php");?>
