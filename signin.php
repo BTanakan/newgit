@@ -1,3 +1,5 @@
+<?php session_start();
+include("include/config.php");?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -55,8 +57,8 @@
                 <div class="card-content text-success">
                     <div class="button-card">
                         <div id="btn"></div>
-                        <button type="button" class="toggle-btn" onclick="login()">Log in</button>
-                        <button type="button" class="toggle-btn" onclick="signup()">Sign up</button>
+                        <button type="button" class="toggle-btn" id="log" onclick="login()">Log in</button>
+                        <button type="button" class="toggle-btn"  id="sign" onclick="signup()">Sign up</button>
                     </div>
                     <div class="card-icon">
                         <i class="fab fa-facebook"></i>
@@ -81,6 +83,10 @@
             
         
         <!-- BOOTSTARP JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="js/bootstrap.min.js"></script>
     <script src="navbar.js"></script>
         <script>
@@ -99,5 +105,48 @@
                 z.style.left ="0";
             }
         </script>
+
+        <!-- <script>
+        $(function() {
+            $("#sign").submit(function() {
+                event.preventDefault();
+                $.ajax({
+                    url: "signup.php",
+                    type: "post",
+                    data: $("form#frmsignup").serialize(),
+                    success: function(data) {
+                        $("#signupModalBody").html(data);
+                        var btnClose =
+                            "<button type='button' class='btn btn-success' data-dismiss='modal'>Close</button>";
+                        $("#signupModalFooter").html(btnClose);
+                    },
+                    error: function(data) {
+                        console.log("An error accured." + data);
+                    }
+                });
+            });
+
+            $("#log").submit(function() {
+                event.preventDefault();
+                $.ajax({
+                    url: "login.php",
+                    type: "post",
+                    data: $("form#login").serialize(),
+                    success: function(data) {
+                        $("#loginModalBody").html(data);
+                        var btnClose =
+                            "<button type='button' class='btn btn-success' data-dismiss='modal'>Close</button>";
+                        $("#loginModalFooter").html(btnClose);
+                    },
+                    error: function(data) {
+                        console.log("An error accured." + data);
+                    }
+                });
+            });
+
+
+    });
+    </script> -->
     </body>
 </html>
+<?php include("include/close.php");?>
