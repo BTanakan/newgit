@@ -57,8 +57,8 @@ include("include/config.php");?>
                 <div class="card-content text-success">
                     <div class="button-card">
                         <div id="btn"></div>
-                        <button type="button" class="toggle-btn" id="log" onclick="login()">Log in</button>
-                        <button type="button" class="toggle-btn"  id="sign" onclick="signup()">Sign up</button>
+                        <button type="button" class="toggle-btn" onclick="login()">Log in</button>
+                        <button type="button" class="toggle-btn" onclick="signup()">Sign up</button>
                     </div>
                     <div class="card-icon">
                         <i class="fab fa-facebook"></i>
@@ -66,14 +66,14 @@ include("include/config.php");?>
                         <i class="fab fa-apple"></i>
                     </div>
                     <form id="login" class="input-card">
-                        <input type="text" class="text-card" placeholder="Username">
-                        <input type="text" class="text-card" placeholder="Password">
+                        <input type="text" class="text-card" name="txtuse" placeholder="Username">
+                        <input type="password" class="text-card" name="txtps" placeholder="Password">
                         <button type="submit" class="submit-btn">Log in</button>
                     </form>
                     <form id="signup" class="input-card">
-                        <input type="text" class="text-card" placeholder="Username">
-                        <input type="text" class="text-card" placeholder="Email">
-                        <input type="text" class="text-card" placeholder="Password"><br>
+                        <input type="text" class="text-card" name="txtuse" placeholder="Username">
+                        <input type="email" class="text-card" name="txtmail" placeholder="Email">
+                        <input type="password" class="text-card" name="txtps" placeholder="Password"><br>
                         <input type="checkbox" class="chech-box"><span>Agree </span>
                         <button type="submit" class="submit-btn">Sign up</button>
                     </form>
@@ -106,7 +106,7 @@ include("include/config.php");?>
             }
         </script>
 
-        <!-- <script>
+        <script>
         $(function() {
             $("#sign").submit(function() {
                 event.preventDefault();
@@ -115,10 +115,6 @@ include("include/config.php");?>
                     type: "post",
                     data: $("form#frmsignup").serialize(),
                     success: function(data) {
-                        $("#signupModalBody").html(data);
-                        var btnClose =
-                            "<button type='button' class='btn btn-success' data-dismiss='modal'>Close</button>";
-                        $("#signupModalFooter").html(btnClose);
                     },
                     error: function(data) {
                         console.log("An error accured." + data);
@@ -131,12 +127,8 @@ include("include/config.php");?>
                 $.ajax({
                     url: "login.php",
                     type: "post",
-                    data: $("form#login").serialize(),
+                    data: $("login").serialize(),
                     success: function(data) {
-                        $("#loginModalBody").html(data);
-                        var btnClose =
-                            "<button type='button' class='btn btn-success' data-dismiss='modal'>Close</button>";
-                        $("#loginModalFooter").html(btnClose);
                     },
                     error: function(data) {
                         console.log("An error accured." + data);
@@ -146,7 +138,7 @@ include("include/config.php");?>
 
 
     });
-    </script> -->
+    </script>
     </body>
 </html>
 <?php include("include/close.php");?>
