@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 
 </head>
 
@@ -32,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link " href="backend.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="parcels.php">Track Parcels</a>
@@ -41,22 +42,22 @@
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle active" aria-current="page" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Report
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="report.php">Shipment Report</a></li>
-                                <li><a class="dropdown-item" href="reportcod.php">COD Shipment Report</a></li>
+                                <li><a class="dropdown-item" href="reportcod.php">COD Report</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="penreport.php">Pending Shipment Report</a></li>
+                                <li><a class="dropdown-item" href="#">Pending Shipment Report</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-                
+
             </div>
         </nav>
     </section>
@@ -67,65 +68,44 @@
                 <form action="post" class="row" id="PostalForm">
                     <div class="row g-4">
                         <div class="header">
-                            <h3><i class="fas fa-box"></i> Customer information</h3>
+                            <h3><i class="fas fa-exclamation-circle" style="color:#F03F45;"></i>Pending Shipment Report </h3>
                         </div>
-                        <div class="col-md-6">
-                            <input class="form-control" type="text" name="NameSend" id="NameSend"
-                                placeholder="Name Last-Name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control" type="tel" name="MBSend" id="MBSend" placeholder="Mobile Number"
-                                required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="AddersSend" id="AddersSend"
-                                placeholder="Adders" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="Adders2Send" id="Adders2Send"
-                                placeholder="Sub-district / District / Province" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="PostcodeSend" id="PostcodeSend"
-                                placeholder="Postal code" required>
+                        <div class="col-md-12" style="display: flex;">
+                            <input type="text" class="form-control">
+                            <button type="submit" class="btn btn-secondary"><i class="fab fa-searchengin"
+                                    style="color:#F03F45;"></i></button>
                         </div>
                     </div>
-            </div>
-            <br><br>
-            <hr>
-            <div class="container-fluid">
-                <div class="row g-4">
-                    <div class="header">
-                        <h3><i class="fas fa-user-check"></i> Receiver information</h3>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-striped table-hover" id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th>Track Number</th>
+                                        <th>Pickup Date</th>
+                                        <th>Deliver Date</th>
+                                        <th>Receiver Info</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <?php
+                            
+                            ?>
+                                <tbody>
+                                    <?php           
+                        
+                        ?>
+                                </tbody>
+                            </table>
+                            <?php
+                
+            
+            ?>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input class="form-control" type="text" name="NameReceive" id="NameReceive"
-                            placeholder="Name Last-Name" required>
-                    </div>
-                    <div class="col-md-6">
-                        <input class="form-control" type="tel" name="MBNameReceive" id="MBNameReceive"
-                            placeholder="Mobile Number" required>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-control" type="text" name="AddersReceive" id="AddersReceive"
-                            placeholder="Adders" required>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-control" type="text" name="Adders2Receive" id="Adders2Receive"
-                            placeholder="Sub-district / District / Province" required>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-control" type="text" name="PostcodeReceive" id="PostcodeReceive"
-                            placeholder="Postal code" required>
-                    </div>
-                    <div class="col">
-                        <input class="btn btn-success" type="submit" name="btnSave" value="Save"
-                            style="float:right; width: 25% ">
-                    </div>
-                </div>
                 </form>
             </div>
-        </div>
     </section>
     <section>
         <div class="modal" tabindex="-1" id="ModalFade">
@@ -156,6 +136,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script>
     $(function() {
         $("#PostalForm").submit(function() {
@@ -167,13 +148,14 @@
                 success: function(data) {
                     $("#ModalFade").modal({
                         fadeDuration: 100
-                    });  
+                    });
                 },
                 error: function(data) {
                     console.log("An error occurred." + data);
                 }
             });
         });
+        $('#myTable').DataTable();
     });
     </script>
 </body>
