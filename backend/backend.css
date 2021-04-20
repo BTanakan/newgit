@@ -1,9 +1,26 @@
-body{
-    background-color:#E5E5E5;
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 nav{
     box-shadow: 1px 1px 10px grey; 
     background-color:#F03F45;
+}
+
+@media screen and (min-width: 800px){
+    div.container{
+        background-color: white;
+        width: 1080px;
+        height: 620px;
+    }
+}
+.container{
+    background-color: white;
+    height: 720px;
+
 }
 
