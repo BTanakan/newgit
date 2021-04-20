@@ -113,7 +113,7 @@
             <div class="row g-4" >
                 <div class="col-md-6" style="margin: auto; padding: 1rem 1rem; display: flex">
                     <input class="form-control" type="text" name="" id="" placeholder="Trick number">
-                    <button class="btn" type="button" id="button-addon2">Button</button>
+                    <button class="btn" type="button" id="button-addon2">Enter</button>
                 </div>
             </div>
         </div>
