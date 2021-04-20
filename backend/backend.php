@@ -56,6 +56,7 @@
                         </li>
                     </ul>
                 </div>
+                
             </div>
         </nav>
     </section>
@@ -66,7 +67,7 @@
                 <form action="post" class="row" id="PostalForm">
                     <div class="row g-4">
                         <div class="header">
-                            <h3><i class="fas fa-box"></i> ข้อมูลผู้ส่ง</h3>
+                            <h3><i class="fas fa-box"></i> Customer information</h3>
                         </div>
                         <div class="col-md-6">
                             <input class="form-control" type="text" name="NameSend" id="NameSend"
@@ -95,7 +96,7 @@
             <div class="container-fluid">
                 <div class="row g-4">
                     <div class="header">
-                        <h3><i class="fas fa-user-check"></i> ข้อมูลผู้รับ</h3>
+                        <h3><i class="fas fa-user-check"></i> Receiver information</h3>
                     </div>
                     <div class="col-md-6">
                         <input class="form-control" type="text" name="NameReceive" id="NameReceive"

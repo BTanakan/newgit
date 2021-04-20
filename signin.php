@@ -66,16 +66,16 @@ include("include/config.php");?>
                         <i class="fab fa-apple"></i>
                     </div>
                     <form id="login" class="input-card">
-                        <input type="text" class="text-card" name="txtuse" placeholder="Username">
-                        <input type="password" class="text-card" name="txtps" placeholder="Password">
-                        <button type="submit" class="submit-btn">Log in</button>
+                        <input type="text" class="text-card" name="txtuse" id="txtuse"placeholder="Username">
+                        <input type="password" class="text-card" name="txtps" id="txtps" placeholder="Password">
+                        <button type="submit" class="submit-btn" id="btnlog">Log in</button>
                     </form>
                     <form id="signup" class="input-card">
-                        <input type="text" class="text-card" name="txtuse" placeholder="Username">
-                        <input type="email" class="text-card" name="txtmail" placeholder="Email">
-                        <input type="password" class="text-card" name="txtps" placeholder="Password"><br>
+                        <input type="text" class="text-card" name="txtuse" id="txtuse" placeholder="Username">
+                        <input type="email" class="text-card" name="txtmail" id="txtmail" placeholder="Email">
+                        <input type="password" class="text-card" name="txtps" id="txtps" placeholder="Password"><br>
                         <input type="checkbox" class="chech-box"><span>Agree </span>
-                        <button type="submit" class="submit-btn">Sign up</button>
+                        <button type="submit" class="submit-btn" id="btnsign">Sign up</button>
                     </form>
                 </div>
         </div> 
@@ -113,7 +113,7 @@ include("include/config.php");?>
                 $.ajax({
                     url: "signup.php",
                     type: "post",
-                    data: $("form#frmsignup").serialize(),
+                    data: $("#sign").serialize(),
                     success: function(data) {
                     },
                     error: function(data) {
@@ -127,7 +127,7 @@ include("include/config.php");?>
                 $.ajax({
                     url: "login.php",
                     type: "post",
-                    data: $("login").serialize(),
+                    data: $("#log").serialize(),
                     success: function(data) {
                     },
                     error: function(data) {
@@ -135,6 +135,10 @@ include("include/config.php");?>
                     }
                 });
             });
+
+            $("#btnsign,#btnlog").on("", function() {
+            location.reload(backend/backend.php);
+        });
 
 
     });
