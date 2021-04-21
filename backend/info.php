@@ -64,8 +64,8 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="info.php">Information</a></li>
-                                    <li><a class="dropdown-item active" href="">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item active" href="">Information</a></li>
+                                    <li><a class="dropdown-item " href="Profile.php">Edit your Profile</a></li>
                                     <li><a class="dropdown-item " href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -88,7 +88,7 @@
                 <form action="post" class="row ">
                     <div class="row g-4">
                         <div class="header">
-                            <h3>Edit your Profile</h3>
+                            <h3>Information</h3>
                         </div>
                         <div class="form-floating col-md-6">
                             <input class="form-control" type="text" name="FirstName" id="FirstName">

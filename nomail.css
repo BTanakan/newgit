@@ -1,0 +1,36 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+nav{
+    box-shadow: 1px 1px 10px grey; 
+    background-color:#F03F45;
+}
+
+@media screen and (min-width: 800px){
+    div.container{
+        background-color: white;
+        width: 1080px;
+        height: 620px;
+    }
+    img.logo{
+        position:absolute;  left:35%; top:55%; width:480px;
+    }
+
+    
+}
+.container{
+    background-color: white;
+    height: 720px;
+
+}
+
+.logo{
+    position:absolute;  left:20%; top:90%; 
+}
+
+

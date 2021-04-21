@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <!-- LINK bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="calculator.css">
     <!-- Font Awesome -->
-        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="photo/ico.ico" type="image/x-icon">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="photo/ico.ico" type="image/x-icon">
     <title>Calculator</title>
 </head>
+
 <body>
     <nav>
         <div class="container-web">
@@ -48,119 +52,146 @@
     </nav1>
     <!-- End nav-down -->
 
-    <div class="header">
-        <div class="container-web">
-            <div class="pic-header">
-                <img src="photo/Header.jpg" alt="" width="100%" height="100%">
-            </div>
-        </div>
-    </div>
-    <!-- End header -->
+    <div class=" header">
+                    <div class="container-web">
+                        <div class="pic-header">
+                            <img src="photo/Header.jpg" alt="" width="100%" height="100%">
+                        </div>
+                    </div>
+                    </div>
+                    <!-- End header -->
 
-    <div class="content">
-        <div class="container-web">
-            <div class="calculator">
-                <a href="index.php">Home</a> <span>>Check Flash Express Price, Estimate Your Shipping Cost</span>
-                <hr>
+                    <div class="content">
+                        <div class="container-web">
+                            <div class="calculator">
+                                <a href="index.php">Home</a> <span>>Check Flash Express Price, Estimate Your Shipping
+                                    Cost</span>
+                                <hr>
 
-               <div class="box-pack">
-                <select name="cal" id="cal" >
-                    <option value="pack" disabled selected >Package</option>
-                    <option value="Eva">Envelop / Mini</option>
-                    <option value="S">Seal Bag / S</option>
-                    <option value="S+">S+</option>
-                    <option value="M">M</option>
-                    <option value="M+">M+</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
+                                <div class="box-pack">
+                                    <select name="cal" id="cal">
+                                        <option value="pack" disabled selected>Package</option>
+                                        <option value="Eva">Envelop / Mini</option>
+                                        <option value="S">Seal Bag / S</option>
+                                        <option value="Sp">S+</option>
+                                        <option value="M">M</option>
+                                        <option value="Mp">M+</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                    </select>
 
-                <select name="location" id="location" >
-                    <option value="loca" disabled selected >location</option>
-                    <option value="BANGKOK">BANGKOK</option>
-                    <option value="UPCOUNTRY">UPCOUNTRY</option>
-                </select>
-               </div>
-               <!-- End box-pack -->
+                                    <select name="location" id="location">
+                                        <option value="loca" disabled selected>location</option>
+                                        <option value="BANGKOK">BANGKOK</option>
+                                        <option value="UPCOUNTRY">UPCOUNTRY</option>
+                                    </select>
+                                    
+                                </div>
+                                <!-- End box-pack -->
 
-               <div class="enter-box">
-                   <div class="container-web">
-                       <div class="enter">
-                           <button class="btnenter">Submit</button>
-                       </div>
-                   </div>
-               </div>
+                                <div class="enter-box">
+                                    <div class="container-web">
+                                        <div class="enter">
+                                            <button class="btnenter" type="submit" id="btnSubmit" onClick="priceFunction();">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
 
-               <div class="cost-box">
-                   <div class="container-web">
-                       <div class="box1">
+                                <div class="cost-box">
+                                    <div class="container-web">
+                                        <div class="box1" id="box1">
 
-                       </div>
-                   </div>
-               </div>
-               <!-- End cost-box -->
-            </div>
-        </div>
-    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End cost-box -->
+                            </div>
+                        </div>
+                    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <!-- BOOTSTARP JS -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="navbar.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                        crossorigin="anonymous">
+                    </script>
+                    <script src="js/bootstrap.min.js"></script>
+                    <script src="navbar.js"></script>
 
-    <br><br><br>
-    <footer class="container-fluid py-5 bg-dark">
-        <div class="row">
-            <div class="col-12 col-md">
-                <!--logo-->
-                <img src="photo/logo.png" width="100%">
-                <small class="d-block mb-3 text-muted "><i class="far fa-copyright"></i> copyright</small>
-            </div>
-            <div class="col-6 col-md" style="color:#fff;">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="link-secondary" href="#">Cool stuff</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md " style="color:#fff;">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="link-secondary" href="#">Resource name</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md" style="color:#fff;">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="link-secondary" href="#">Business</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md" style="color:#fff;">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="link-secondary" href="#aboutme.html">Team</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
-          <script>
-          $(document).ready(function(){
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 50) {
-              $('#back-to-top').fadeIn();
-            } else {
-              $('#back-to-top').fadeOut();
-            }
-          });
-          // scroll body to 0px on click
-          $('#back-to-top').click(function () {
-            $('body,html').animate({
-              scrollTop: 0
-            }, 400);
-            return false;
-          });
-      });
-    </script>
+                    <br><br><br>
+                    <footer class="container-fluid py-5 bg-dark">
+                        <div class="row">
+                            <div class="col-12 col-md">
+                                <!--logo-->
+                                <img src="photo/logo.png" width="100%">
+                                <small class="d-block mb-3 text-muted "><i class="far fa-copyright"></i>
+                                    copyright</small>
+                            </div>
+                            <div class="col-6 col-md" style="color:#fff;">
+                                <h5>Features</h5>
+                                <ul class="list-unstyled text-small">
+                                    <li><a class="link-secondary" href="#">Cool stuff</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md " style="color:#fff;">
+                                <h5>Resources</h5>
+                                <ul class="list-unstyled text-small">
+                                    <li><a class="link-secondary" href="#">Resource name</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md" style="color:#fff;">
+                                <h5>Resources</h5>
+                                <ul class="list-unstyled text-small">
+                                    <li><a class="link-secondary" href="#">Business</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md" style="color:#fff;">
+                                <h5>About</h5>
+                                <ul class="list-unstyled text-small">
+                                    <li><a class="link-secondary" href="#aboutme.html">Team</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+                    <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i
+                            class="fas fa-chevron-up"></i></a>
+                    <script>
+                    $(document).ready(function() {
+                        $(window).scroll(function() {
+                            if ($(this).scrollTop() > 50) {
+                                $('#back-to-top').fadeIn();
+                            } else {
+                                $('#back-to-top').fadeOut();
+                            }
+                        });
+                        // scroll body to 0px on click
+                        $('#back-to-top').click(function() {
+                            $('body,html').animate({
+                                scrollTop: 0
+                            }, 400);
+                            return false;
+                        });
+                    });
+                    </script>
+                    <script>
+                        
+                        function priceFunction();{
+                            var x = document.getElementById("location");
+                        var y = x.getElementsByTagName("option");
+                        var a = document.getElementById("cal");
+                        var b = x.getElementsByTagName("option");
+                        var BANGKOK ="35";
+                        var UPCOUNTRY ="45";
+                        var Eva ="0";
+                        var S =30;
+                        var Sp =50;
+                        var M =55;
+                        var Mp =95;
+                        var L =140;
+                        var XL=225;
+                        document.getElementById('box1').value = eval(y + b );
+                        }
+                        </script>
 
 </body>
+
 </html>
