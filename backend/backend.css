@@ -17,9 +17,10 @@ nav{
         width: 1080px;
         height: 620px;
     }
-    .red{
-        color:#F03F45;
+    img.logo{
+        position:absolute;  left:35%; top:55%; width:480px;
     }
+
     
 }
 .container{
@@ -27,7 +28,9 @@ nav{
     height: 720px;
 
 }
-.fas{
-    color:#F03F45;
+
+.logo{
+    position:absolute;  left:20%; top:90%; 
 }
+
 

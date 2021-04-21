@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Document</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +34,7 @@
                             <a class="nav-link " href="Create.php">Create Shipment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="">Price Estimation</a>
+                            <a class="nav-link" href="Price.php">Price Estimation</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Track.php">Track & Trace</a>
@@ -65,7 +65,7 @@
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
+                                    <li><a class="dropdown-item active" href="">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -84,72 +84,34 @@
     <section>
         <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="container-fluid">
-                <form action="post" class="row" id="PriceForm">
+                <form action="post" class="row ">
                     <div class="row g-4">
                         <div class="header">
-                            <h3><i class="fas fa-calculator" style="color:#F03F45;"></i> Price Estimation</h3>
+                            <h3>Change Password</h3>
                         </div>
-                        <div class="form-group  col-md-5">
-                            <select class="form-select" id="Origin">
-                                <option disabled selected>Origin</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
+                        <div class="form-floating col-md-5">
+                            <input class="form-control" type="password" name="PassWord" id="PassWord">
+                            <label for="FirstName">Password (6 digit)</label>
                         </div>
-                        <div class="form-group  col-md-5">
-                            <select class="form-select" id="Destination">
-                                <option disabled selected>Destination</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
+                        <div class="form-floating col-md-5">
+                            <input class="form-control" type="password" name="confirm" id="confirm">
+                            <label for="FirstName">Confirm new password</label>
                         </div>
-                        <div class="form-group col-md-2">
-                            <input class="btn btn-success" type="submit" name="submitSelect" id="submitSelect"
-                                value="Select" style="width:60%">
+                        <div class="col-md-2">
+                            <input class="btn btn-success btnSave" type="button" name="btnSave" id="btnSave"
+                                value="Save" style="width:60%">
                         </div>
                     </div>
                 </form>
             </div>
             <br>
             <hr>
-            <div class="col-md-12">
-                <table class="table table-striped table-hover" id="myTable">
-                    <thead class="table-dark">
-                        <tr>
-                            <th class="text-center">Package Size</th>
-                            <th class="text-center">Shipping Fee</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            // $sql = "select * from book";
-                            // if($result = $conn->query($sql)){
-                            //     if($result -> num_rows > 0){
-                            //         while($row=$result->fetch_array()){
-                            //             echo "<tr>";
-                            //             echo "<td>".$row["Package"]."</td>";
-                            //             echo "<td>".$row["Fee"]."</td>";
-                            //             echo "<td>";
-                            //             echo"</td>";
-                            //             echo"</tr>";
-                            //         }
-                                            ?>
-                    </tbody>
-                </table>
-                <?php
-                            //         $result->free();
-                            //     } else {
-                            //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
-                            //     }
-                            // } else {
-                            //     echo "Error: could not able to execute $sql." .$conn->error;
-                            // }
-                    ?>
+            <div class="container-fluid">
+                <img class="logo" src="../photo/logo.png" alt="">
             </div>
         </div>
     </section>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

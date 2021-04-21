@@ -5,7 +5,7 @@ $output="";
 if(isset($_POST["txtuse"])){
     $sql="insert into users (username,password) values(?,?)";
             if($stmt=$conn->prepare($sql)){
-                $stmt->bind_param("ss",,$us,$ps);
+                $stmt->bind_param("ss",$us,$ps);
                 $us=$_POST["txtuse"];
                 $ps=sha1($_POST["txtps"]);
                 if($stmt->query()){

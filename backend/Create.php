@@ -25,7 +25,7 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.php"><img src="../photo/logo.png" width="150px"></a>
+                <a class="navbar-brand" href="#"><img src="../photo/logo.png" width="150px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -34,10 +34,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active"  href="">Create Shipment</a>
+                            <a class="nav-link active" href="">Create Shipment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="Price.php">Price Estimation</a>
+                            <a class="nav-link" href="Price.php">Price Estimation</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Track.php">Track & Trace</a>
@@ -67,20 +67,20 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                    <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="#">Logout</a></li>
                                 </ul>
                             </div>
-                        <?php
+                            <?php
                          //}
                         ?>
                     </ul>
                 </div>
-                
+
             </div>
         </nav>
     </section>
@@ -239,7 +239,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-   <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
     <script>
     $(function() {
         $("#PostalForm").submit(function() {
