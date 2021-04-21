@@ -125,11 +125,11 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th>Pickup Date</th>
-                                    <th>Consignment No</th>
+                                    <th>Sender Name</th>
                                     <th>Recipient Name</th>
                                     <th>Address</th>
                                     <th>Status</th>
-                                    <th>Copied Link</th>
+                                    <th>Price</th>
                                 </tr>
                             </thead>
                             <tbody>
