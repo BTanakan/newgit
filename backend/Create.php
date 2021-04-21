@@ -1,4 +1,7 @@
-<?php session_start();  ?>
+<?php session_start(); 
+
+        include_once('../config.php')
+?>
 <!doctype html>
 <html lang="en">
 
@@ -34,10 +37,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active"  href="">Create Shipment</a>
+                            <a class="nav-link active" href="">Create Shipment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="Price.php">Price Estimation</a>
+                            <a class="nav-link" href="Price.php">Price Estimation</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Track.php">Track & Trace</a>
@@ -62,7 +65,8 @@
                             <div class="dropdown dropstart">
                                 <button class="btn dropdown-toggle" type="button" id="navbarDropdown"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, <?php //echo $_SESSION["name"];?>
+                                    Welcome, <?php echo $_SESSION["name"];?> ||
+                                    Role : <?php echo $_SESSION['role']; ?>
                                 </button>
 
 
@@ -72,23 +76,95 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
-                        <?php
+                            <?php
                          //}
                         ?>
                     </ul>
                 </div>
-                
+
             </div>
         </nav>
     </section>
     <br><br>
+
+    <!-- Sender -->
     <section>
         <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="container-fluid">
-                <form action="post" class="row" id="SendForm">
+                <form action="" method="post" class="row" id="SendForm">
+                    <?php 
+
+//if user if == sender user_id show foreach
+$sql = "SELECT* FROM sender WHERE user_id = :user_id ";
+$query = $db->prepare($sql);
+$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+$user_id = $_SESSION['user_id'];
+$query->execute();
+$result = $query->fetchAll(PDO::FETCH_OBJ);
+
+if($query->rowCount() > 0 ) {
+
+    foreach($result as $res) {
+    if($res->user_id == $_SESSION['user_id'])
+    {
+       //echo $res->firstname;
+    //    $_SESSION['sender_firstname'] = $res->firstname;
+    //    $_SESSION['sender_lastname'] = $res->lastname; 
+        
+    
+?>
+                    <div class="row g-4">
+                        <div class="header">
+                            <h3><i class="fas fa-box" style="color:#F03F45;"></i> Sender Information</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control bg-light text-dark" type="text" name="NameSend" id="NameSend"
+                                placeholder="Name Last-Name" value="<?php echo $res->firstname_lastname ?>" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control bg-light text-dark" type="tel" name="MBSend" id="MBSend"
+                                placeholder="Mobile Number" value="<?php echo $res->phone ?>" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control bg-light text-dark" type="text" name="AddersSend" id="AddersSend"
+                                value="<?php echo $res->address ?>" placeholder="Adders" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control bg-light text-dark" type="text" name="Adders2Send"
+                                id="Adders2Send" value="<?php echo $res->district_province ?>"
+                                placeholder="Sub-district / District / Province" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control bg-light text-dark" type="text" name="PostcodeSend"
+                                id="PostcodeSend" value="<?php echo $res->postcode ?>" placeholder="Postal code"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" name="check">
+                                <label class="form-check-label" for="gridCheck">
+                                For Sender don't have a account
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <input class="btn btn-secondary" type="submit" name="btnUpdate" value="Update"
+                                style="float:right; width: 25% ">
+                        </div>
+                    </div>
+                </form>
+                <?php 
+    }
+}
+} else {
+    ?>
+                <form action="" method="post" class="row" id="SendForm">
                     <div class="row g-4">
                         <div class="header">
                             <h3><i class="fas fa-box" style="color:#F03F45;"></i> Sender Information</h3>
@@ -119,9 +195,17 @@
                         </div>
                     </div>
                 </form>
+
+
+                <?php 
+    }
+?>
+
             </div>
             <br><br>
             <hr>
+
+            <!-- receipt -->
             <div class="container-fluid">
                 <div class="row g-3">
                     <div class="col-md-4">
@@ -143,36 +227,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                            // $sql = "select * from book";
-                            // if($result = $conn->query($sql)){
-                            //     if($result -> num_rows > 0){
-                            //         while($row=$result->fetch_array()){
-                            //             echo "<tr>";
-                            //             echo "<td>".$row["Tacking"]."</td>";
-                            //             echo "<td>".$row["Name"]."</td>";
-                            //             echo "<td>".$row["Author"]."</td>";
-                            //             echo "<td>".$row["Stock"]."</td>";
-                            //             echo "<td>".$row["Price"]."</td>";
-                            //             echo "<td>";
-                            //             echo "<span title='View' data-toggle='tooltip' class='view_data'  id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-eye'></i></span>";
-                            //             echo "<span title='Edit' data-toggle='tooltip' class='edit_data' id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-pen'></i></span>";
-                            //             echo "<span title='Delete' data-toggle='tooltip' class='delete_data' id='" . $row["ISBN"] . "' fname='" . $row["Image"] . "' style='padding-right:5px'><i class='fas fa-trash'></i></span>";
-                            //             echo"</td>";
-                            //             echo"</tr>";
-                            //         }
-                                            ?>
+
                             </tbody>
                         </table>
-                        <?php
-                            //         $result->free();
-                            //     } else {
-                            //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
-                            //     }
-                            // } else {
-                            //     echo "Error: could not able to execute $sql." .$conn->error;
-                            // }
-                    ?>
+
                     </div>
                 </div>
             </div>
@@ -239,29 +297,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-   <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
     <script>
-    $(function() {
-        $("#PostalForm").submit(function() {
+    $(document).ready(function() {
+        console.log("Function Ready!.");
+
+        $("#SendForm").submit(function(e) {
+            console.log("save");
             event.preventDefault();
             $.ajax({
-                url: "Postal.php",
-                type: "post",
-                data: $("form#PostalForm").serialize(),
+                url: "sender.php",
+                type: "POST",
+                data: $('form#SendForm').serialize(),
                 success: function(data) {
-                    $("#ModalFade").modal({
-                        fadeDuration: 100
-                    });
+                    console.log("Success", data);
+                  //  location.reload();
                 },
                 error: function(data) {
-                    console.log("An error occurred." + data);
-                }
+                    console.log('An error occurred.');
+                    console.log(data);
+                },
             });
         });
-        $("#showModal").submit(function() {
-            event.preventDefault();
-            $("#ReceiveForm").modal("show");
-        });
+
+        // $("#receiver").submit(function(e) {
+        //     console.log("receiver");
+        //     event.preventDefault();
+        //     $.ajax({
+        //         url: "send.php",
+        //         type: "POST",
+        //         data: $('form#receiver').serialize(),
+        //         success: function(data) {
+        //             console.log("Success", data);
+        //         },
+        //         error: function(data) {
+        //             console.log('An error occurred.');
+        //             console.log(data);
+        //         },
+        //     });
+        // });
     });
     </script>
 </body>

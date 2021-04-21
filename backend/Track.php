@@ -62,7 +62,8 @@
                             <div class="dropdown dropstart">
                                 <button class="btn dropdown-toggle" type="button" id="navbarDropdown"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, <?php //echo $_SESSION["name"];?>
+                                    Welcome, <?php echo $_SESSION["name"];?> ||
+                                    Role : <?php echo $_SESSION['role']; ?>
                                 </button>
 
 
@@ -72,7 +73,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
                             <?php

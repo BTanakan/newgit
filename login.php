@@ -1,32 +1,40 @@
-<?php
+<?php 
+
 session_start();
-include("inc/config.php");
-$output="";
-if($_POST["txtuse"]){
-        $sql="select username from users where username=? and password=?";
-        if($stmt=$conn->prepare($sql)){
-            $stmt->bind_param("ss",$us,$ps);
-            $us=$_POST["txtuse"];
-            $ps=sha1($_POST["txtps"]);
-            if(mysqli_stmt_execute($stmt)){
-                $result=$stmt->get_result();
-                if($result->num_rows>0){
-                    $row=$result->fetch_assoc();
+$output = "";
+include_once ('config.php');
+
+    if(!empty ($_POST['txtuse']) && !empty($_POST['txtps']))
+    {
+        
+
+        $sql = "SELECT* FROM users WHERE username  = :username";
+        $query = $db->prepare($sql);
+        $query->bindParam(':username', $username, PDO::PARAM_STR);
+        $username = $_POST['txtuse'];
+        $password = $_POST['txtps'];
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_OBJ);
+
+        if($query->rowCount() > 0) {
+            foreach($result as $res) {
+                if($res->username == $username && $res->password == $password)
+                {
+                    $output.="login success";
+                    $_SESSION['name'] = $res->username;
+                    $_SESSION['user_id'] = $res->user_id;
+                    $_SESSION['role'] = $res->role;
                 }
                 else{
-                    $output.="Error in Object Oriented: username or password incorrect.";
+                    $output.="login fail something wrong";
                 }
             }
-            else{
-                $output.="Error in Object Oriented: could not execute query: $sql".$conn->error;
-            }
+        }
 
-        }
-        else{
-            $output.="Error in Object Oriented: could not prepare query: $sql".$conn->error;
-        }
-}
-else $output.="Error: not found.";
-include("inc/close.php");
-echo $output;
+        $output.="Text in come";
+    }else {
+        $output.="Fail to Login";
+    }
+
+    echo $output;
 ?>
