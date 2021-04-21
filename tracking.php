@@ -35,12 +35,12 @@
         </span>
 
         <div class="logo">
-            <a href="index.html"><img src="photo/logo.png" width="200px" height="70px"></a>
+            <a href="index.php"><img src="photo/logo.png" width="200px" height="70px"></a>
         </div>
         <ul1 id="js-menu">
             <li><a href="aboutme.html">About me</a></li>
             <li><a href="#" style="color: black;">Tracking</a></li>
-            <li><a href="calculator.html">Price</a></li>
+            <li><a href="calculator.php">Price</a></li>
             <li><a href="FAQ.html">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul1>
@@ -103,7 +103,7 @@
     <div class="container">
         <div class="card " style="border-radius: 20px;">
             <div class="card-header" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                <a href="index.html">Home</a> <span>>Tracking</span>
+                <a href="index.php">Home</a> <span>>Tracking</span>
             </div>
             <div class="card-body text-center">
                 <h1 class="title">Enter your parcel number to find your parcel.</h1><br>

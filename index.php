@@ -34,12 +34,12 @@
         </span>
 
         <div class="logo">
-            <a href="index.html"><img src="photo/logo.png" width="200px" height="70px"></a>
+            <a href="index.php"><img src="photo/logo.png" width="200px" height="70px"></a>
         </div>
         <ul1 id="js-menu">
             <li><a href="aboutme.html">About me</a></li>
             <li><a href="tracking.php">Tracking</a></li>
-            <li><a href="calculator.html">Price</a></li>
+            <li><a href="calculator.php">Price</a></li>
             <li><a href="FAQ.html">FAQ</a></li>
             <li><a href="contact.html" ">Contact</a></li>
         </ul1>

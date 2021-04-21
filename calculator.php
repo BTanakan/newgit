@@ -36,7 +36,7 @@
         </span>
 
         <div class="logo">
-            <img src="photo/logo.png" width="200px" height="70px">
+            <a href="index.php"><img src="photo/logo.png" width="200px" height="70px"></a>
         </div>
         <ul1 id="js-menu">
             <li><a href="aboutme.html">About me</a></li>
@@ -60,7 +60,7 @@
     <div class="content">
         <div class="container-web">
             <div class="calculator">
-                <a href="index.html">Home</a> <span>>Check Flash Express Price, Estimate Your Shipping Cost</span>
+                <a href="index.php">Home</a> <span>>Check Flash Express Price, Estimate Your Shipping Cost</span>
                 <hr>
 
                <div class="box-pack">
