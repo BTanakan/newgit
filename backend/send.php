@@ -9,8 +9,8 @@
 
     if(!empty($_POST['NameReceive']))
     {
-        $sql = "INSERT INTO receiver(receiver_name, phone, address, province, postcode, tracking_number, sender_firstname_lastname,price)
-        VALUE(:receiver_name, :phone, :address, :province, :postcode, :tracking_number, :sender_firstname_lastname, :price)";
+        $sql = "INSERT INTO receiver(receiver_name, phone, address, province, postcode, tracking_number, sender_firstname_lastname,price, region)
+        VALUE(:receiver_name, :phone, :address, :province, :postcode, :tracking_number, :sender_firstname_lastname, :price, :region)";
 $query = $db->prepare($sql);
 $query->bindParam(':receiver_name', $name, PDO::PARAM_STR);
 $query->bindParam(':phone', $phone, PDO::PARAM_STR);
@@ -20,6 +20,7 @@ $query->bindParam(':postcode', $postcode, PDO::PARAM_STR);
 $query->bindParam(':tracking_number', $tracking, PDO::PARAM_STR);
 $query->bindParam(':sender_firstname_lastname', $sender_firstname_lastname, PDO::PARAM_STR);
 $query->bindParam(':price', $price, PDO::PARAM_STR);
+$query->bindParam(':region', $region, PDO::PARAM_STR);
 
 $name = $_POST['NameReceive'];
 $phone = $_POST['MBNameReceive'];
@@ -29,6 +30,7 @@ $postcode = $_POST['PostcodeReceive'];
 $tracking = $_POST['tracking_number'];
 $sender_firstname_lastname = $_SESSION['sender_firstname'];
 $price = $_POST['Price'];
+$region = $_POST['region'];
 
 
 $result = $query->execute();

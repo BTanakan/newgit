@@ -59,17 +59,7 @@
                         </li>" ;
                         }
                         ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Report
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="Shipment.php">Shipment Report</a></li>
-                                <li><a class="dropdown-item active" href="">COD Shipment Report</a></li>
-                                <li><a class="dropdown-item" href="Pending.php">Pending Shipment Report</a></li>
-                            </ul>
-                        </li>
+                       
                     </ul>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item" style="float:right; right:125px;">
@@ -112,6 +102,8 @@
                             <th scope="col">Tracking</th>
                             <th scope="col">Status</th>
                             <th scope="col">Actions</th>
+                            <th scope="col">Driver</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -138,10 +130,31 @@
                                 <i class="fa fa-pencil edit" data-toggle="modal" data-target="#modaledit"
                                     aria-hidden="true" id="<?php  echo $res->tracking_number ?>"></i>
                                 <i class="fa fa-trash Del_ID" name="Del_ID" value="<?php  echo $res->tracking_number ?>
-                                    "i>
+                                    " i>
                             </td>
-                        </tr>
+                            <?php 
+                                include_once('../config.php');
+                                $sql = "SELECT d.*
+                                                FROM receiver r inner join driver d
+                                                on r.driver_id = d.driver_id
+                                               where r.driver_id = :user_id";
+                                $query = $db->prepare($sql);
+                               $query->bindParam(':user_id', $driver_id, PDO::PARAM_STR);
+                               $driver_id = $res->driver_id;
+                                $query->execute();
+                                $result1 = $query->fetchAll(PDO::FETCH_OBJ);
+                                if($query->rowCount() >0) {
+                                    foreach($result1 as $des) 
+                                    {
 
+                                 
+                            ?>
+                            <td class="driver"><?php echo $des->firstname?></td>
+                        </tr>
+                                        <?php 
+                                           }
+                                        }
+                                        ?>
 
                         <?php 
 }
@@ -153,30 +166,30 @@
             </div>
         </div>
 
-         <!-- model delete  -->
-    <div class="modal fade" id="modaldelete" tabindex="-1" role="dialog" aria-labelledby="modalLogin"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detail Book </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+        <!-- model delete  -->
+        <div class="modal fade" id="modaldelete" tabindex="-1" role="dialog" aria-labelledby="modalLogin"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Detail Book </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                <div class="modal-body" id="bookdeletemodalbody">
-                   <p> Are you sure want to delete ?</p>
-                    <p class="text-warning">This action cannot be undo. </p>
-                </div>
-                <div class="modal-footer" id="bookdeletemodalfooter">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger" id="delete_re">Delete</button>
-                    <!-- <input type="text" class=""  id="userdetail_id" name="id_detail" value="" > -->
+                    <div class="modal-body" id="bookdeletemodalbody">
+                        <p> Are you sure want to delete ?</p>
+                        <p class="text-warning">This action cannot be undo. </p>
+                    </div>
+                    <div class="modal-footer" id="bookdeletemodalfooter">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" id="delete_re">Delete</button>
+                        <!-- <input type="text" class=""  id="userdetail_id" name="id_detail" value="" > -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
         <!-- Modal Books edit -->
         <div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modalLogin"
@@ -195,8 +208,8 @@
                         <div class="modal-body" id="modalbody">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <input type="text" class="form-control " id="isbn" name="txt_tack" placeholder="Tracking"
-                                        value="" readonly>
+                                    <input type="text" class="form-control " id="isbn" name="txt_tack"
+                                        placeholder="Tracking" value="" readonly>
                                 </div>
                             </div>
                             <br>
@@ -205,18 +218,51 @@
                                     <input type="text" class="form-control" id="name" name="txt_status"
                                         placeholder="Book Name">
                                 </div>
+
+
                             </div>
-                            <div class="modal-footer" id="modalupdate">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-success" id="Edit_re">Update</button>
-                                <input type="hidden" class="" id="user_id" value='' name="user_id">
+                            <br>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <select name="driver_name" id="" class="form-control driver">
+                                        <option option value="" disabled selected > <p id="driverse">Select Driver</p></option>
+                                        <?php 
+                                     $sql = "SELECT* FROM driver";
+                                     $query = $db->prepare($sql);
+                                   // $query->bindParam(':region', $region, PDO::PARAM_STR);
+                                   // $region = 'south';
+                                     $query->execute();
+                                     $result = $query->fetchAll(PDO::FETCH_OBJ);
+                                     if($query->rowCount() >0) {
+                                        foreach($result as $res) 
+                                        {
+                                ?>
+
+                                        <option  value="<?php echo $res->driver_id ?>"><?php echo $res->firstname ?>
+                                        </option>
+                                        <?php 
+                                        }
+                                     }
+                                ?>
+                                    </select>
+
+                                </div>
+
                             </div>
+                        </div>
+
+
+                        <div class="modal-footer" id="modalupdate">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-success" id="Edit_re">Update</button>
+                            <input type="hidden" class="" id="user_id" value='' name="user_id">
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
 
-       
+
 
     </section>
 
@@ -257,8 +303,8 @@
                     success: function(data) {
                         console.log(data);
                         $("#bookdeletemodalbody").html(data);
-                         var btnClose =
-                        ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
+                        var btnClose =
+                            ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
                         $("#modalupdate").html(btnClose);
                     }
                 });
@@ -273,8 +319,10 @@
 
             $track = $(this).closest("tr").find('.track').text();
             $status = $(this).closest("tr").find('.status').text();
+            $driver = $(this).closest("tr").find('.status').text();
             $('#isbn').val($track);
             $('#name').val($status);
+            $('#name').val($driver);
         });
 
         $('#frmedit').on('submit', function(e) {
@@ -290,7 +338,7 @@
 
                     var btnClose =
                         ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
-                        $("#bookdeletemodalfooter").html(btnClose);
+                    $("#bookdeletemodalfooter").html(btnClose);
 
                 }
             });
@@ -298,9 +346,9 @@
 
         $(function() {
             $("#modaldelete, #modaledit").on("hidden.bs.modal",
-        function() {
-                location.reload();
-            });
+                function() {
+                    location.reload();
+                });
         });
 
     });

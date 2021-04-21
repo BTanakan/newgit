@@ -54,21 +54,11 @@
                         } else if($_SESSION['role'] == "delivery")
                         {
                             echo "<li class='nav-item'>
-                            <a class='nav-link' href='#'>Delivery</a>
+                            <a class='nav-link' href='delivery.php'>Delivery</a>
                         </li>" ;
                         }
                         ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Report
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="Shipment.php">Shipment Report</a></li>
-                                <li><a class="dropdown-item" href="COD.php">COD Shipment Report</a></li>
-                                <li><a class="dropdown-item" href="Pending.php">Pending Shipment Report</a></li>
-                            </ul>
-                        </li>
+                      
                     </ul>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <?php
