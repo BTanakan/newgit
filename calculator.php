@@ -100,9 +100,9 @@
 
                                 <div class="cost-box">
                                     <div class="container-web">
-                                        <div class="box1" id="box1">
-
-                                        </div>
+                                        <label for="">Price is:</label>
+                                        <label class="result"></label>
+                                        <label for="">Baht</label>
                                     </div>
                                 </div>
                                 <!-- End cost-box -->
@@ -178,8 +178,8 @@
                        
                         $('select').on('change', function() {
 
-                            $('#box1').text($('select[name=cal]').val() + $('select[name=location]').val() );
-                            );
+                            $('.result').text($('select[name=cal]').val()-($('select[name=cal]').val() + $('select[name=location]').val())
+    );
 
                         });
 
