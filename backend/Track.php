@@ -44,6 +44,20 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="">Track & Trace</a>
                         </li>
+                        <?php 
+                        
+                        if($_SESSION['role'] == "hub")
+                        {
+                            echo "<li class='nav-item'>
+                            <a class='nav-link' href='hub.php'>Hub</a>
+                        </li>" ;
+                        } else if($_SESSION['role'] == "delivery")
+                        {
+                            echo "<li class='nav-item'>
+                            <a class='nav-link' href='#'>Delivery</a>
+                        </li>" ;
+                        }
+                        ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">

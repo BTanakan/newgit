@@ -28,14 +28,14 @@ include_once ('config.php');
                 }
                 else{
                     $output.="login fail something wrong";
-                    header('location: index.php');
+                   // header('location: index.php');
                 }
             }
         }
 
         $output.="Text in come";
     }else {
-        header('location: index.php');
+        //header('location: index.php');
     }
 
     echo $output;

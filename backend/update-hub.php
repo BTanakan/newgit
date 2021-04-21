@@ -19,9 +19,13 @@ $output = "";
 
 
 
-        // $output.="Text in come";
+        if($sql)
+        {
+            $output.="Update Success";
+        }
     }else {
         $output.="Fail Update";
 
     }
+    echo $output;
 ?>

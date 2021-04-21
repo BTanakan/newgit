@@ -50,7 +50,7 @@
                         if($_SESSION['role'] == "hub")
                         {
                             echo "<li class='nav-item'>
-                            <a class='nav-link' href='#'>Hub</a>
+                            <a class='nav-link' href='hub.php'>Hub</a>
                         </li>" ;
                         } else if($_SESSION['role'] == "delivery")
                         {
@@ -206,7 +206,7 @@
                                         placeholder="Book Name">
                                 </div>
                             </div>
-                            <div class="modal-footer" id="modalfooter">
+                            <div class="modal-footer" id="modalupdate">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 <button type="submit" class="btn btn-success" id="Edit_re">Update</button>
                                 <input type="hidden" class="" id="user_id" value='' name="user_id">
@@ -257,9 +257,9 @@
                     success: function(data) {
                         console.log(data);
                         $("#bookdeletemodalbody").html(data);
-                        var btnClose =
+                         var btnClose =
                         ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
-                        $("#bookdeletemodalfooter").html(btnClose);
+                        $("#modalupdate").html(btnClose);
                     }
                 });
             });
@@ -283,25 +283,21 @@
             $.ajax({
                 url: "update-hub.php",
                 type: "POST",
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData: false,
+                data: $('form#frmedit').serialize(),
                 success: function(data) {
                     console.log(data);
-                    $("#bookeditmodalbody").html(data);
+                    $("#modalbody").html(data);
+
                     var btnClose =
-                        ' <button type="submit" class="btn btn-danger" data-dismiss="modal">Close</button>'
-                    $("#bookeditmodalfooter").html(btnClose);
-                },
-                error: function(e) {
-                    console.log(error);
+                        ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
+                        $("#bookdeletemodalfooter").html(btnClose);
+
                 }
             });
         });
 
         $(function() {
-            $("#modaldelete").on("hidden.bs.modal",
+            $("#modaldelete, #modaledit").on("hidden.bs.modal",
         function() {
                 location.reload();
             });
