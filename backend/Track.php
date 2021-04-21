@@ -68,8 +68,8 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                    <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -101,11 +101,11 @@
                                 <option value="TrackNum" id="TrackNum">Track Number</option>
                             </select>
                         </div>
-                        <div class=" col-md-8">
+                        <div class=" col-md-7">
                             <input type="text" class="form-control" placeholder="Please fill in the information">
                         </div>
-                        <div class="col-md-1">
-                            <button type="submit" class="btn btn-success" style="width:80%"><i class="fas fa-search"
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-success" style="width:60%"><i class="fas fa-search"
                                     style="color:white;"></i></button>
                         </div>
                     </div>

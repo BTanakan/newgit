@@ -69,8 +69,8 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                    <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -107,19 +107,20 @@
                     </div>
                 </form>
             </div>
-            <br><hr>
-                <div class="col-md-12">
-                        <table class="table table-striped table-hover" id="myTable">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Consignment No.</th>
-                                    <th>Pickup Date</th>
-                                    <th>Recipient Info</th>
-                                    <th>COD Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
+            <br>
+            <hr>
+            <div class="col-md-12">
+                <table class="table table-striped table-hover" id="myTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Consignment No.</th>
+                            <th>Pickup Date</th>
+                            <th>Recipient Info</th>
+                            <th>COD Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                             // $sql = "select * from book";
                             // if($result = $conn->query($sql)){
                             //     if($result -> num_rows > 0){
@@ -138,9 +139,9 @@
                             //             echo"</tr>";
                             //         }
                                             ?>
-                            </tbody>
-                        </table>
-                        <?php
+                    </tbody>
+                </table>
+                <?php
                             //         $result->free();
                             //     } else {
                             //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
@@ -149,7 +150,7 @@
                             //     echo "Error: could not able to execute $sql." .$conn->error;
                             // }
                     ?>
-                    </div>
+            </div>
         </div>
     </section>
 

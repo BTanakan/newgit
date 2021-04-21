@@ -69,8 +69,8 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                    <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -96,35 +96,36 @@
                         <div class="header">
                             <h3><i class="fas fa-file-alt" style="color:#F03F45;"></i> Shipment Report</h3>
                         </div>
-                        <div class="form-floating col-md-5" >
+                        <div class="form-floating col-md-5">
                             <input type="date" class="form-control" name="DateForm" id="DateForm">
                             <label for="DateForm"> Form</label>
                         </div>
                         <div class="form-floating col-md-5">
                             <input type="date" class="form-control" name="DateTo" id="DateTo">
                             <label for="DateTo">To</label>
-                            </div>
-                            <div class="col-md-2">
-                            <button type="submit" class="btn btn-success" style="width:80%">Select</button>
-                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-success" style="width:60%">Select</button>
                         </div>
                     </div>
-                </form>
-                <br><hr>
-                <div class="col-md-12">
-                        <table class="table table-striped table-hover" id="myTable">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Consignment No.</th>
-                                    <th>Pickup Date</th>
-                                    <th>Delivered Date</th>
-                                    <th>Recipient Info</th>
-                                    <th>COD Amount</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
+            </div>
+            </form>
+            <br>
+            <hr>
+            <div class="col-md-12">
+                <table class="table table-striped table-hover" id="myTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Consignment No.</th>
+                            <th>Pickup Date</th>
+                            <th>Delivered Date</th>
+                            <th>Recipient Info</th>
+                            <th>COD Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                             // $sql = "select * from book";
                             // if($result = $conn->query($sql)){
                             //     if($result -> num_rows > 0){
@@ -143,9 +144,9 @@
                             //             echo"</tr>";
                             //         }
                                             ?>
-                            </tbody>
-                        </table>
-                        <?php
+                    </tbody>
+                </table>
+                <?php
                             //         $result->free();
                             //     } else {
                             //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
@@ -154,8 +155,8 @@
                             //     echo "Error: could not able to execute $sql." .$conn->error;
                             // }
                     ?>
-                    </div>
             </div>
+        </div>
     </section>
 
     <!-- Optional JavaScript -->

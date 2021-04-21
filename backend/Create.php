@@ -28,7 +28,7 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.php"><img src="../photo/logo.png" width="150px"></a>
+                <a class="navbar-brand" href="#"><img src="../photo/logo.png" width="150px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -71,8 +71,8 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                    <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

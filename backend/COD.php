@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
-    
+
 
 </head>
 
 <body style="background-color:#E5E5E5;">
     <section>
-    <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.php"><img src="../photo/logo.png" width="150px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,10 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link "  href="Create.php">Create Shipment</a>
+                            <a class="nav-link " href="Create.php">Create Shipment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="Price.php">Price Estimation</a>
+                            <a class="nav-link" href="Price.php">Price Estimation</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Track.php">Track & Trace</a>
@@ -69,61 +69,62 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                    <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
-                        <?php
+                            <?php
                          //}
                         ?>
                     </ul>
                 </div>
-                
+
             </div>
         </nav>
     </section>
     <br><br>
     <section>
-    <div class="container shadow p-3 mb-5 bg-body rounded">
+        <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="container-fluid">
                 <form action="post" class="row" id="CODForm">
                     <div class="row g-4">
                         <div class="header">
                             <h3><i class="fas fa-coins" style="color:#F03F45;"></i> COD Shipment Report</h3>
                         </div>
-                        <div class="form-floating col-md-5" >
+                        <div class="form-floating col-md-5">
                             <input type="date" class="form-control" name="DateForm" id="DateForm">
                             <label for="DateForm"> Form</label>
                         </div>
                         <div class="form-floating col-md-5">
                             <input type="date" class="form-control" name="DateTo" id="DateTo">
                             <label for="DateTo">To</label>
-                            </div>
-                            <div class="col-md-2">
-                            <button type="submit" class="btn btn-success" style="width:80%">Select</button>
-                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-success" style="width:60%">Select</button>
                         </div>
                     </div>
-                </form>
-                <br><hr>
-                <div class="col-md-12">
-                        <table class="table table-striped table-hover" id="myTable">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Consignment No.</th>
-                                    <th>Pickup Date</th>
-                                    <th>Delivered Date</th>
-                                    <th>Recipient Info</th>
-                                    <th>COD Amount</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
+            </div>
+            </form>
+            <br>
+            <hr>
+            <div class="col-md-12">
+                <table class="table table-striped table-hover" id="myTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Consignment No.</th>
+                            <th>Pickup Date</th>
+                            <th>Delivered Date</th>
+                            <th>Recipient Info</th>
+                            <th>COD Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
                             // $sql = "select * from book";
                             // if($result = $conn->query($sql)){
                             //     if($result -> num_rows > 0){
@@ -142,9 +143,9 @@
                             //             echo"</tr>";
                             //         }
                                             ?>
-                            </tbody>
-                        </table>
-                        <?php
+                    </tbody>
+                </table>
+                <?php
                             //         $result->free();
                             //     } else {
                             //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
@@ -153,10 +154,10 @@
                             //     echo "Error: could not able to execute $sql." .$conn->error;
                             // }
                     ?>
-                    </div>
             </div>
+        </div>
     </section>
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../js/bootstrap.bundle.js"></script>
@@ -168,7 +169,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    
+
     <script>
     $(function() {
         $("#PostalForm").submit(function() {
@@ -187,7 +188,7 @@
                 }
             });
         });
-        
+
     });
     </script>
 </body>
