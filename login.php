@@ -24,16 +24,18 @@ include_once ('config.php');
                     $_SESSION['name'] = $res->username;
                     $_SESSION['user_id'] = $res->user_id;
                     $_SESSION['role'] = $res->role;
+                    Header("Location: backend/COD.php");
                 }
                 else{
                     $output.="login fail something wrong";
+                    header('location: index.php');
                 }
             }
         }
 
         $output.="Text in come";
     }else {
-        $output.="Fail to Login";
+        header('location: index.php');
     }
 
     echo $output;
