@@ -98,26 +98,38 @@
         </div>
     </div>
     <!-- End header -->
-
+    <div class="container-web ">
+        <div>
+            <a href="index.php" style="text-decoration: none; color: #818191;">Home</a>
+            > Tracking
+            <hr>
+        </div>
+    </div>
     <br>
-    <div class="container">
-        <div class="card " style="border-radius: 20px;">
-            <div class="card-header" style="border-top-right-radius: 20px; border-top-left-radius: 20px;">
-                <a href="index.php">Home</a> <span>>Tracking</span>
-            </div>
-            <div class="card-body text-center">
+    <div class="content">
+        <div class="container-web">
+
+            <div class="body text-center">
                 <h1 class="title">Enter your parcel number to find your parcel.</h1><br>
                 <p> Enter your parcel number To track the latest status and estimated time of delivery of your parcel.
                 </p><br>
             </div>
-            <div class="row g-4" >
+            <div class="row g-4">
                 <div class="col-md-6" style="margin: auto; padding: 1rem 1rem; display: flex">
                     <input class="form-control" type="text" name="" id="" placeholder="Trick number">
-                    <button class="btn" type="button" id="button-addon2">Enter</button>
+                    <button class="btn" type="submit" id="button-addon2">Enter</button>
                 </div>
             </div>
+            <div class="box" style="margin: 0 auto; width: 70%; height: 50px; background: #F9FAFC;">
+                   <div class="container-web">
+                       <div class="box1">
+
+                       </div>
+                   </div>
+               </div>
         </div>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
         integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">

@@ -60,7 +60,7 @@
             <div class="input-box">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 <input type="text" class="input-text" placeholder="Please enter your Express tracking number" >
-                <button type="submit" class="enter-track" id="btn-enter" >Track</button>
+                <button class="btn" type="submit" id="button-addon2" onClick="document.location.href='tracking.php'">Track</button>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
                     
                 </div>
                 <div class="card-content-item-2">
-                    <a href="calculator.html"><i class="fa fa-archive" aria-hidden="true"></i></a>
+                    <a href="calculator.php"><i class="fa fa-archive" aria-hidden="true"></i></a>
                     <a href="contact.html"><i class="fa fa-user" aria-hidden="true"></i></a>
                     <a href="tracking.php"><i class="fa fa-truck" aria-hidden="true"></i></a>
                 </div>
