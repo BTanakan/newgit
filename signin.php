@@ -75,6 +75,7 @@ include("include/config.php");?>
                         <input type="email" class="text-card" name="txtmail" id="txtmail" placeholder="Email">
                         <input type="password" class="text-card" name="txtps" id="txtps" placeholder="Password"><br>
                         <input type="checkbox" class="chech-box"><span>Agree </span>
+                        <input type="hidden" value="customer" name="txtrole">
                         <button type="submit" class="submit-btn" id="btnsign">Sign up</button>
                     </form>
                 </div>
@@ -108,13 +109,16 @@ include("include/config.php");?>
 
         <script>
         $(function() {
-            $("#sign").submit(function() {
+            $("#signup").submit(function() {
+                console.log("Hello");
                 event.preventDefault();
                 $.ajax({
                     url: "signup.php",
                     type: "post",
-                    data: $("#sign").serialize(),
+                    data: $("form#signup").serialize(),
                     success: function(data) {
+                        console.log(data);
+                        location.reload();
                     },
                     error: function(data) {
                         console.log("An error accured." + data);
@@ -122,13 +126,15 @@ include("include/config.php");?>
                 });
             });
 
-            $("#log").submit(function() {
+            $("#login").submit(function() {
                 event.preventDefault();
                 $.ajax({
                     url: "login.php",
                     type: "post",
-                    data: $("#log").serialize(),
+                    data: $("form#login").serialize(),
                     success: function(data) {
+                        console.log(data);
+                        window.location.href = '/newgit/backend/Create.php';
                     },
                     error: function(data) {
                         console.log("An error accured." + data);
@@ -136,13 +142,10 @@ include("include/config.php");?>
                 });
             });
 
-            $("#btnsign,#btnlog").on("", function() {
-            location.reload(backend/backend.php);
-        });
+            
 
 
     });
     </script>
     </body>
 </html>
-<?php include("include/close.php");?>

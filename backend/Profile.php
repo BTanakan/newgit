@@ -64,6 +64,7 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="info.php">Information</a></li>
                                     <li><a class="dropdown-item active" href="">Edit your Profile</a></li>
                                     <li><a class="dropdown-item " href="Password.php">Change Password</a></li>
                                     <li>

@@ -1,29 +1,29 @@
-<?php
-session_start();
-include("inc/config.php");
-$output="";
-if(isset($_POST["txtuse"])){
-    $sql="insert into users (username,password) values(?,?)";
-            if($stmt=$conn->prepare($sql)){
-                $stmt->bind_param("ss",$us,$ps);
-                $us=$_POST["txtuse"];
-                $ps=sha1($_POST["txtps"]);
-                if($stmt->query()){
-                    $last_id=$conn->insert_id;
-                    
-                }
-                else{
-                    $output.="Error in Object Oriented: could not execute query: $sql".$conn->error;
-                }
-                $stmt->close();
-            }
-            else{
-                $output.="Error in Object Oriented: could not execute query: $sql".$conn->error;
-            }  
-}
-else{
-    $output .= "Error: not found.";
-}
-include("inc/close.php");
-echo $output;
+<?php 
+    include_once('config.php');
+    $output ="";
+    if(!empty($_POST['txtuse']) && !empty($_POST['txtmail']) && !empty($_POST['txtps']))
+    {
+        //$output.= "Have item";
+        $sql = "INSERT INTO users(username, email, password, role) 
+                    VALUE(:username, :email, :password, :role)";
+        $query = $db->prepare($sql);
+        $query->bindParam(':username', $username, PDO::PARAM_STR);
+        $query->bindParam(':email', $email, PDO::PARAM_STR);
+        $query->bindParam(':password', $password, PDO::PARAM_STR);
+
+        $query->bindParam(':role', $role, PDO::PARAM_STR);
+        
+        $username = $_POST['txtuse'];
+        $email = $_POST['txtmail'];
+        $password= $_POST['txtps'];
+        $role = $_POST['txtrole'];
+
+        $result = $query->execute();
+        
+    } else {
+        $output.="Fail";
+    }
+
+    echo $output;
+
 ?>

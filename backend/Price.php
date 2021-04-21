@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -59,17 +60,19 @@
                             <div class="dropdown dropstart">
                                 <button class="btn dropdown-toggle" type="button" id="navbarDropdown"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, <?php //echo $_SESSION["name"];?>
+                                    Welcome, <?php echo $_SESSION["name"];?> ||
+                                    Role : <?php echo $_SESSION['role']; ?>
                                 </button>
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="info.php">Information</a></li>
                                     <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
                                     <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
                             <?php

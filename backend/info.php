@@ -22,7 +22,7 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href=""><img src="../photo/logo.png" width="150px"></a>
+                <a class="navbar-brand" href="../index.php"><img src="../photo/logo.png" width="150px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -64,9 +64,9 @@
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="info.php">Information</a></li>
-                                    <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
-                                    <li><a class="dropdown-item active" href="">Change Password</a></li>
+                                    <li><a class="dropdown-item active" href="">Information</a></li>
+                                    <li><a class="dropdown-item " href="Profile.php">Edit your Profile</a></li>
+                                    <li><a class="dropdown-item " href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -88,27 +88,55 @@
                 <form action="post" class="row ">
                     <div class="row g-4">
                         <div class="header">
-                            <h3>Change Password</h3>
+                            <h3>Information</h3>
                         </div>
-                        <div class="form-floating col-md-5">
-                            <input class="form-control" type="password" name="PassWord" id="PassWord">
-                            <label for="FirstName">Password (6 digit)</label>
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="text" name="FirstName" id="FirstName">
+                            <label for="FirstName">Firstname</label>
                         </div>
-                        <div class="form-floating col-md-5">
-                            <input class="form-control" type="password" name="confirm" id="confirm">
-                            <label for="FirstName">Confirm new password</label>
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="text" name="LastName" id="LastName">
+                            <label for="LastName">Lastname</label>
                         </div>
-                        <div class="col-md-2">
-                            <input class="btn btn-success btnSave" type="button" name="btnSave" id="btnSave"
-                                value="Save" style="width:60%">
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="text" name="MobileNum" id="MobileNum">
+                            <label for="MobileNum">Mobile Number</label>
+                        </div>
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="text" name="IDCard" id="IDCard">
+                            <label for="IDCard">ID Card</label>
+                        </div>
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="date" name="Birthday" id="Birthday">
+                            <label for="Birthday">Birthday</label>
+                        </div>
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="email" name="EmailAddress" id="EmailAddress">
+                            <label for="EmailAddress">Email Address</label>
+                        </div>
+                        <hr>
+                        <div class="form-check col-md-1">
+                            <input class="form-check-input" type="radio" name="Male" id="Male" checked>
+                            <label class="form-check-label" for="Male">Male</label>
+                        </div>
+                        <div class="form-check col-md-10">
+                            <input class="form-check-input" type="radio" name="Female" id="Female">
+                            <label class="form-check-label" for="flexRadioDefault2">Female</label>
+                        </div>
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="text" name="Adders" id="Adders">
+                            <label for="Adders">Adders</label>
+                        </div>
+                        <div class="form-floating col-md-6">
+                            <input class="form-control" type="email" name="Adders2" id="Adders2">
+                            <label for="Adders2">Sub-district / District / Province</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="btn btn-success" type="button" name="btnSave" id="btnSave" value="Save"
+                                style="width:60%">
                         </div>
                     </div>
                 </form>
-            </div>
-            <br>
-            <hr>
-            <div class="container-fluid">
-                <img class="logo" src="../photo/logo.png" alt="">
             </div>
         </div>
     </section>

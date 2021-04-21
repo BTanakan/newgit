@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+    include_once('../config.php')
+?>
 <!doctype html>
 <html lang="en">
 
@@ -17,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
-    
+
 
 </head>
 
@@ -62,17 +64,19 @@
                             <div class="dropdown dropstart">
                                 <button class="btn dropdown-toggle" type="button" id="navbarDropdown"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, <?php //echo $_SESSION["name"];?>
+                                    Welcome, <?php echo $_SESSION["name"];?> ||
+                                    Role : <?php echo $_SESSION['role']; ?>
                                 </button>
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="info.php">Information</a></li>
                                     <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
                                     <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
                             <?php
@@ -89,7 +93,7 @@
     <section>
         <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="container-fluid">
-                <form action="post" class="row" id="TrackForm">
+                <form action="" method="post" class="row" id="TrackForm">
                     <div class="row g-4">
                         <div class="header">
                             <h3><i class="fas fa-box-open" style="color:#F03F45;"></i> Track & Trace</h3>
@@ -101,7 +105,8 @@
                             </select>
                         </div>
                         <div class=" col-md-7">
-                            <input type="text" class="form-control" placeholder="Please fill in the information">
+                            <input type="text" class="form-control" name="get_tack"
+                                placeholder="Please fill in the information" value="<?php if(isset($_POST['get_tack'])) {echo $_POST['get_tack']; } ?>">
                         </div>
                         <div class="col-md-2">
                             <button type="submit" class="btn btn-success" style="width:60%"><i class="fas fa-search"
@@ -109,54 +114,76 @@
                         </div>
                     </div>
                 </form>
-                <br><hr>
+                <br>
+                <hr>
                 <div class="col-md-12">
-                        <table class="table table-striped table-hover" id="myTable">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Pickup Date</th>
-                                    <th>Consignment No</th>
-                                    <th>Recipient Name</th>
-                                    <th>Address</th>
-                                    <th>Status</th>
-                                    <th>Copied Link</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                            // $sql = "select * from book";
-                            // if($result = $conn->query($sql)){
-                            //     if($result -> num_rows > 0){
-                            //         while($row=$result->fetch_array()){
-                            //             echo "<tr>";
-                            //             echo "<td>".$row["Tacking"]."</td>";
-                            //             echo "<td>".$row["Name"]."</td>";
-                            //             echo "<td>".$row["Author"]."</td>";
-                            //             echo "<td>".$row["Stock"]."</td>";
-                            //             echo "<td>".$row["Price"]."</td>";
-                            //             echo "<td>";
-                            //             echo "<span title='View' data-toggle='tooltip' class='view_data'  id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-eye'></i></span>";
-                            //             echo "<span title='Edit' data-toggle='tooltip' class='edit_data' id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-pen'></i></span>";
-                            //             echo "<span title='Delete' data-toggle='tooltip' class='delete_data' id='" . $row["ISBN"] . "' fname='" . $row["Image"] . "' style='padding-right:5px'><i class='fas fa-trash'></i></span>";
-                            //             echo"</td>";
-                            //             echo"</tr>";
-                            //         }
-                                            ?>
-                            </tbody>
-                        </table>
-                        <?php
-                            //         $result->free();
-                            //     } else {
-                            //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
-                            //     }
-                            // } else {
-                            //     echo "Error: could not able to execute $sql." .$conn->error;
-                            // }
+                    <table class="table table-striped table-hover" id="myTable">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Pickup Date</th>
+                                <th>Sender Name</th>
+                                <th>Recipient Name</th>
+                                <th>Address</th>
+                                <th>Status</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                       
+                        <tbody>
+                            <?php 
+                                     if(isset($_POST['get_tack']))
+                                     {
+                                        //  var_dump("Hello");
+                                        $sql = "SELECT* FROM receiver WHERE tracking_number  = :tracking_number
+                                                    or receiver_name = :tracking_number";
+                                        $query = $db->prepare($sql);
+                                        $query->bindParam(':tracking_number', $tracking_number, PDO::PARAM_STR);
+                                        $tracking_number = $_POST['get_tack'];
+                                        $query->execute();
+                                        $result = $query->fetchAll(PDO::FETCH_OBJ);
+                                
+                                        if($query->rowCount() > 0) {
+                                            foreach($result as $res) {
+                                                if($res->tracking_number == $tracking_number || $res->receiver_name == $tracking_number)
+                                                {
+                                                    echo "<tr>";
+                                                    echo "<td>".$res->Pickup_Date. "</td>";
+                                                    echo "<td>".$res->sender_firstname_lastname. "</td>";
+                                                    echo "<td>".$res->receiver_name. "</td>";
+                                                    echo "<td>".$res->address. "</td>";
+                                                    echo "<td>".$res->status. "</td>";
+                                                    echo "<td>".$res->price. "</td>";
+                                                    echo "</tr>";
+                                                    
+                                                    $_SESSION['tracking'] = $res->tracking_number;
+                                                    echo "<br>";
+                                                    // echo "ชื่อผู้รับ: " .$res->receiver_name ."<br>";
+                                                    // echo "หมายเลขพัสดุ: " .$res->tracking_number ."<br>";
+                                                    // echo "ที่อยู่: " .$res->address ."<br>";
+                                                    // echo "สถานะ: " .$res->status ."<br>";
+                                                }
+                                                else{
+                                                    $output.="login fail something wrong";
+                                                }
+                                            }
+                                        }
+                                     }
+                                
+                                ?>
+                        </tbody>
+                    </table>
+                    <?php 
+                    if(isset($_POST['get_tack']))
+                    {
+                        // echo "<input type='text' class='form-control col-3' id='$_POST['get_tack']' value=' '>";
+                    }
+
                     ?>
-                    </div>
+                    
+                </div>
             </div>
     </section>
-   
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../js/bootstrap.bundle.js"></script>
@@ -168,27 +195,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    
+
     <script>
-    $(function() {
-        $("#PostalForm").submit(function() {
-            event.preventDefault();
-            $.ajax({
-                url: "Postal.php",
-                type: "post",
-                data: $("form#PostalForm").serialize(),
-                success: function(data) {
-                    $("#ModalFade").modal({
-                        fadeDuration: 100
-                    });
-                },
-                error: function(data) {
-                    console.log("An error occurred." + data);
-                }
-            });
-        });
-        
-    });
     </script>
 </body>
 

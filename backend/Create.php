@@ -1,4 +1,7 @@
-<?php session_start();  ?>
+<?php session_start(); 
+
+        include_once('../config.php')
+?>
 <!doctype html>
 <html lang="en">
 
@@ -62,17 +65,19 @@
                             <div class="dropdown dropstart">
                                 <button class="btn dropdown-toggle" type="button" id="navbarDropdown"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, <?php //echo $_SESSION["name"];?>
+                                    Welcome, <?php echo $_SESSION["name"];?> ||
+                                    Role : <?php echo $_SESSION['role']; ?>
                                 </button>
 
 
                                 <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="info.php">Information</a></li>
                                     <li><a class="dropdown-item" href="Profile.php">Edit your Profile</a></li>
                                     <li><a class="dropdown-item" href="Password.php">Change Password</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
                             <?php
@@ -85,10 +90,80 @@
         </nav>
     </section>
     <br><br>
+
+    <!-- Sender -->
     <section>
         <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="container-fluid">
-                <form action="post" class="row" id="SendForm">
+                <form action="" method="post" class="row" id="SendForm">
+                    <?php 
+
+//if user if == sender user_id show foreach
+$sql = "SELECT* FROM sender WHERE user_id = :user_id ";
+$query = $db->prepare($sql);
+$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+$user_id = $_SESSION['user_id'];
+$query->execute();
+$result = $query->fetchAll(PDO::FETCH_OBJ);
+
+if($query->rowCount() > 0 ) {
+
+    foreach($result as $res) {
+    if($res->user_id == $_SESSION['user_id'])
+    {
+       //echo $res->firstname;
+       $_SESSION['sender_firstname'] = $res->firstname_lastname;
+        
+    
+?>
+                    <div class="row g-4">
+                        <div class="header">
+                            <h3><i class="fas fa-box" style="color:#F03F45;"></i> Sender Information</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control bg-light text-dark" type="text" name="NameSend" id="NameSend"
+                                placeholder="Name Last-Name" value="<?php echo $res->firstname_lastname ?>" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input class="form-control bg-light text-dark" type="tel" name="MBSend" id="MBSend"
+                                placeholder="Mobile Number" value="<?php echo $res->phone ?>" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control bg-light text-dark" type="text" name="AddersSend" id="AddersSend"
+                                value="<?php echo $res->address ?>" placeholder="Adders" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control bg-light text-dark" type="text" name="Adders2Send"
+                                id="Adders2Send" value="<?php echo $res->district_province ?>"
+                                placeholder="Sub-district / District / Province" required>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control bg-light text-dark" type="text" name="PostcodeSend"
+                                id="PostcodeSend" value="<?php echo $res->postcode ?>" placeholder="Postal code"
+                                required>
+
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="checkbox" id="exampleRadios1" value="1"
+                                checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Confirm
+                            </label>
+                        </div>
+
+                        <div class="col">
+                            <input class="btn btn-secondary" type="submit" name="btnUpdate" value="Update"
+                                style="float:right; width: 25% ">
+                        </div>
+                    </div>
+                </form>
+                <?php 
+    }
+}
+} else {
+    ?>
+                <form action="" method="post" class="row" id="SendForm">
                     <div class="row g-4">
                         <div class="header">
                             <h3><i class="fas fa-box" style="color:#F03F45;"></i> Sender Information</h3>
@@ -113,15 +188,30 @@
                             <input class="form-control" type="text" name="PostcodeSend" id="PostcodeSend"
                                 placeholder="Postal code" required>
                         </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="checkbox" id="exampleRadios2" value="2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Confirm
+                            </label>
+                        </div>
                         <div class="col">
                             <input class="btn btn-success" type="submit" name="btnSave" value="Save"
                                 style="float:right; width: 25% ">
                         </div>
                     </div>
                 </form>
+
+
+                <?php 
+    }
+?>
+
             </div>
             <br><br>
             <hr>
+
+            <!-- receipt -->
             <div class="container-fluid">
                 <div class="row g-3">
                     <div class="col-md-4">
@@ -143,36 +233,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                            // $sql = "select * from book";
-                            // if($result = $conn->query($sql)){
-                            //     if($result -> num_rows > 0){
-                            //         while($row=$result->fetch_array()){
-                            //             echo "<tr>";
-                            //             echo "<td>".$row["Tacking"]."</td>";
-                            //             echo "<td>".$row["Name"]."</td>";
-                            //             echo "<td>".$row["Author"]."</td>";
-                            //             echo "<td>".$row["Stock"]."</td>";
-                            //             echo "<td>".$row["Price"]."</td>";
-                            //             echo "<td>";
-                            //             echo "<span title='View' data-toggle='tooltip' class='view_data'  id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-eye'></i></span>";
-                            //             echo "<span title='Edit' data-toggle='tooltip' class='edit_data' id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-pen'></i></span>";
-                            //             echo "<span title='Delete' data-toggle='tooltip' class='delete_data' id='" . $row["ISBN"] . "' fname='" . $row["Image"] . "' style='padding-right:5px'><i class='fas fa-trash'></i></span>";
-                            //             echo"</td>";
-                            //             echo"</tr>";
-                            //         }
-                                            ?>
+
                             </tbody>
                         </table>
-                        <?php
-                            //         $result->free();
-                            //     } else {
-                            //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
-                            //     }
-                            // } else {
-                            //     echo "Error: could not able to execute $sql." .$conn->error;
-                            // }
-                    ?>
+
                     </div>
                 </div>
             </div>
@@ -188,7 +252,7 @@
                         <h4 class="modal-title"><i class="fas fa-user-check"></i> Recipient information</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" id="xClose"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="modalbody">
                         <div class="container-fluid">
                             <div class="row g-3">
                                 <div class="col-md-6 form-floating">
@@ -220,10 +284,47 @@
                                         placeholder="Postal code" required>
                                     <label for="PostcodeReceive">Postal code</label>
                                 </div>
-                            </div>
+
+                                <div class="col-md-12 form-floating">
+                                    <input class="form-control" type="text" name="tracking_number"
+                                        placeholder="tracking_number #" required>
+                                    <label for="PostcodeReceive">Tracking_number #</label>
+                                </div>
+
+                                <div class="col-md-12 form-floating">
+                                    <input class="form-control" type="text" name="Price"
+                                        placeholder="Price" required>
+                                    <label for="PostcodeReceive">Price </label>
+                                </div>
+
+                                <!-- <div class="form-group col-md-4">
+                                    <label for="inputState">Package</label>
+                                    <select id="inputPackage" class="form-control" onchange="calculateAmount(this.value)">
+                                        <option selected>Choose...</option>
+                                        <option value="mini">Envelop / Mini</option>
+                                        <option value="seal">Seal Bag / S</option>
+                                        <option value="s+">S+</option>
+                                        <option value="m+">M</option>
+                                        <option value="m">M+</option>
+                                        <option value="l">L</option>
+                                        <option value="ml">XL</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputState">Service</label>
+                                    <select id="inputState" class="form-control" onchange="calculateAmount(this.value)">
+                                        <option selected>Choose...</option>
+                                        <option value="bangkok">BANGKOK</option>
+                                        <option value="upcountry">UPCOUNTRY</option>
+                                    </select>
+                                </div>
+                                <button class="btn-btn success" id="Confirm" onclick="confirm()">Show Price</button>
+                                <input class="form-control col-6" type="text" value="" id="tot_amount" name ="tot_amount" placeholder="Price"
+                                    readonly> -->
+                            </div> 
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" id="footermodal">
                         <input class="btn btn-success" type="submit" name="btnSave" value="Save"
                             style="float:right; width: 25% ">
                     </div>
@@ -241,29 +342,59 @@
     </script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script>
-    $(function() {
-        $("#PostalForm").submit(function() {
+    $(document).ready(function() {
+        console.log("Function Ready!.");
+
+        $("#SendForm").submit(function(e) {
+            console.log("save");
             event.preventDefault();
             $.ajax({
-                url: "Postal.php",
-                type: "post",
-                data: $("form#PostalForm").serialize(),
+                url: "sender.php",
+                type: "POST",
+                data: $('form#SendForm').serialize(),
                 success: function(data) {
-                    $("#ModalFade").modal({
-                        fadeDuration: 100
-                    });
+                    console.log("Success", data);
+                    location.reload();
                 },
                 error: function(data) {
-                    console.log("An error occurred." + data);
-                }
+                    console.log('An error occurred.');
+                    console.log(data);
+                },
             });
         });
-        $("#showModal").submit(function() {
+
+        $("#ReceiveForm").submit(function(e) {
+            console.log("receiver");
             event.preventDefault();
-            $("#ReceiveForm").modal("show");
+            $.ajax({
+                url: "send.php",
+                type: "POST",
+                data: $('form#ReceiveForm').serialize(),
+                success: function(data) {
+                    console.log("Success", data);
+                    $("#modalbody").html(data);
+                    var btnClose =
+                        ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
+                    $("#footermodal").html(btnClose);
+                },
+                error: function(data) {
+                    console.log('An error occurred.');
+                    console.log(data);
+                },
+            });
         });
+
+        $(function() {
+            $("#ReceiveModal").on("hidden.bs.modal",
+        function() {
+                location.reload();
+            });
+        });
+
     });
+
     </script>
+
 </body>
 
 </html>
