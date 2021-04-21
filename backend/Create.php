@@ -112,8 +112,7 @@ if($query->rowCount() > 0 ) {
     if($res->user_id == $_SESSION['user_id'])
     {
        //echo $res->firstname;
-    //    $_SESSION['sender_firstname'] = $res->firstname;
-    //    $_SESSION['sender_lastname'] = $res->lastname; 
+       $_SESSION['sender_firstname'] = $res->firstname_lastname;
         
     
 ?>
@@ -145,13 +144,12 @@ if($query->rowCount() > 0 ) {
 
                         </div>
 
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck" name="check">
-                                <label class="form-check-label" for="gridCheck">
-                                For Sender don't have a account
-                                </label>
-                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="checkbox" id="exampleRadios1" value="1"
+                                checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Confirm
+                            </label>
                         </div>
 
                         <div class="col">
@@ -189,6 +187,13 @@ if($query->rowCount() > 0 ) {
                         <div class="col-md-4">
                             <input class="form-control" type="text" name="PostcodeSend" id="PostcodeSend"
                                 placeholder="Postal code" required>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="checkbox" id="exampleRadios2" value="2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Confirm
+                            </label>
                         </div>
                         <div class="col">
                             <input class="btn btn-success" type="submit" name="btnSave" value="Save"
@@ -247,7 +252,7 @@ if($query->rowCount() > 0 ) {
                         <h4 class="modal-title"><i class="fas fa-user-check"></i> Recipient information</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" id="xClose"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="modalbody">
                         <div class="container-fluid">
                             <div class="row g-3">
                                 <div class="col-md-6 form-floating">
@@ -279,10 +284,47 @@ if($query->rowCount() > 0 ) {
                                         placeholder="Postal code" required>
                                     <label for="PostcodeReceive">Postal code</label>
                                 </div>
-                            </div>
+
+                                <div class="col-md-12 form-floating">
+                                    <input class="form-control" type="text" name="tracking_number"
+                                        placeholder="tracking_number #" required>
+                                    <label for="PostcodeReceive">Tracking_number #</label>
+                                </div>
+
+                                <div class="col-md-12 form-floating">
+                                    <input class="form-control" type="text" name="Price"
+                                        placeholder="Price" required>
+                                    <label for="PostcodeReceive">Price </label>
+                                </div>
+
+                                <!-- <div class="form-group col-md-4">
+                                    <label for="inputState">Package</label>
+                                    <select id="inputPackage" class="form-control" onchange="calculateAmount(this.value)">
+                                        <option selected>Choose...</option>
+                                        <option value="mini">Envelop / Mini</option>
+                                        <option value="seal">Seal Bag / S</option>
+                                        <option value="s+">S+</option>
+                                        <option value="m+">M</option>
+                                        <option value="m">M+</option>
+                                        <option value="l">L</option>
+                                        <option value="ml">XL</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputState">Service</label>
+                                    <select id="inputState" class="form-control" onchange="calculateAmount(this.value)">
+                                        <option selected>Choose...</option>
+                                        <option value="bangkok">BANGKOK</option>
+                                        <option value="upcountry">UPCOUNTRY</option>
+                                    </select>
+                                </div>
+                                <button class="btn-btn success" id="Confirm" onclick="confirm()">Show Price</button>
+                                <input class="form-control col-6" type="text" value="" id="tot_amount" name ="tot_amount" placeholder="Price"
+                                    readonly> -->
+                            </div> 
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" id="footermodal">
                         <input class="btn btn-success" type="submit" name="btnSave" value="Save"
                             style="float:right; width: 25% ">
                     </div>
@@ -312,7 +354,7 @@ if($query->rowCount() > 0 ) {
                 data: $('form#SendForm').serialize(),
                 success: function(data) {
                     console.log("Success", data);
-                  //  location.reload();
+                    location.reload();
                 },
                 error: function(data) {
                     console.log('An error occurred.');
@@ -321,24 +363,38 @@ if($query->rowCount() > 0 ) {
             });
         });
 
-        // $("#receiver").submit(function(e) {
-        //     console.log("receiver");
-        //     event.preventDefault();
-        //     $.ajax({
-        //         url: "send.php",
-        //         type: "POST",
-        //         data: $('form#receiver').serialize(),
-        //         success: function(data) {
-        //             console.log("Success", data);
-        //         },
-        //         error: function(data) {
-        //             console.log('An error occurred.');
-        //             console.log(data);
-        //         },
-        //     });
-        // });
+        $("#ReceiveForm").submit(function(e) {
+            console.log("receiver");
+            event.preventDefault();
+            $.ajax({
+                url: "send.php",
+                type: "POST",
+                data: $('form#ReceiveForm').serialize(),
+                success: function(data) {
+                    console.log("Success", data);
+                    $("#modalbody").html(data);
+                    var btnClose =
+                        ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
+                    $("#footermodal").html(btnClose);
+                },
+                error: function(data) {
+                    console.log('An error occurred.');
+                    console.log(data);
+                },
+            });
+        });
+
+        $(function() {
+            $("#ReceiveModal").on("hidden.bs.modal",
+        function() {
+                location.reload();
+            });
+        });
+
     });
+
     </script>
+
 </body>
 
 </html>
