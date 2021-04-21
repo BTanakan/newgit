@@ -59,7 +59,7 @@
         <div class="container-web">
             <div class="input-box">
                 <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="text" class="input-text" placeholder="Please enter your Express tracking number" >
+                <input type="text" class="input-text" placeholder="Please enter your Express tracking number" data-toggle="document.location.href='tracking.php'" >
                 <button class="btn" type="submit" id="button-addon2" onClick="document.location.href='tracking.php'">Track</button>
             </div>
         </div>

@@ -71,28 +71,29 @@
                                 <div class="box-pack">
                                     <select name="cal" id="cal">
                                         <option value="pack" disabled selected>Package</option>
-                                        <option value="Eva">Envelop / Mini</option>
-                                        <option value="S">Seal Bag / S</option>
-                                        <option value="Sp">S+</option>
-                                        <option value="M">M</option>
-                                        <option value="Mp">M+</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
+                                        <option value="0">Envelop / Mini</option>
+                                        <option value="30">Seal Bag / S</option>
+                                        <option value="50">S+</option>
+                                        <option value="55">M</option>
+                                        <option value="95">M+</option>
+                                        <option value="140">L</option>
+                                        <option value="225">XL</option>
                                     </select>
 
                                     <select name="location" id="location">
                                         <option value="loca" disabled selected>location</option>
-                                        <option value="BANGKOK">BANGKOK</option>
-                                        <option value="UPCOUNTRY">UPCOUNTRY</option>
+                                        <option value="35">BANGKOK</option>
+                                        <option value="45">UPCOUNTRY</option>
                                     </select>
-                                    
+
                                 </div>
                                 <!-- End box-pack -->
 
                                 <div class="enter-box">
                                     <div class="container-web">
                                         <div class="enter">
-                                            <button class="btnenter" type="submit" id="btnSubmit" onClick="priceFunction();">Submit</button>
+                                            <button class="btnenter" type="submit" id="btnSubmit"
+                                                onClick="priceFunction();">Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -173,24 +174,17 @@
                     });
                     </script>
                     <script>
-                        
-                        function priceFunction();{
-                            var x = document.getElementById("location");
-                        var y = x.getElementsByTagName("option");
-                        var a = document.getElementById("cal");
-                        var b = x.getElementsByTagName("option");
-                        var BANGKOK ="35";
-                        var UPCOUNTRY ="45";
-                        var Eva ="0";
-                        var S =30;
-                        var Sp =50;
-                        var M =55;
-                        var Mp =95;
-                        var L =140;
-                        var XL=225;
-                        document.getElementById('box1').value = eval(y + b );
-                        }
-                        </script>
+                    $(document).ready(function() {
+                       
+                        $('select').on('change', function() {
+
+                            $('#box1').text($('select[name=cal]').val() + $('select[name=location]').val() );
+                            );
+
+                        });
+
+                    });
+                    </script>
 
 </body>
 
