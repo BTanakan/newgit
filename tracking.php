@@ -120,13 +120,51 @@
                     <button class="btn" type="submit" id="button-addon2">Enter</button>
                 </div>
             </div>
-            <div class="box" style="margin: 0 auto; width: 70%; height: 50px; background: #F9FAFC;">
-                   <div class="container-web">
-                       <div class="box1">
-
-                       </div>
-                   </div>
-               </div>
+            <div class="col-md-12">
+                        <table class="table table-striped table-hover" id="myTable">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Pickup Date</th>
+                                    <th>Sender Name</th>
+                                    <th>Recipient Name</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                            // $sql = "select * from book";
+                            // if($result = $conn->query($sql)){
+                            //     if($result -> num_rows > 0){
+                            //         while($row=$result->fetch_array()){
+                            //             echo "<tr>";
+                            //             echo "<td>".$row["Tacking"]."</td>";
+                            //             echo "<td>".$row["Name"]."</td>";
+                            //             echo "<td>".$row["Author"]."</td>";
+                            //             echo "<td>".$row["Stock"]."</td>";
+                            //             echo "<td>".$row["Price"]."</td>";
+                            //             echo "<td>";
+                            //             echo "<span title='View' data-toggle='tooltip' class='view_data'  id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-eye'></i></span>";
+                            //             echo "<span title='Edit' data-toggle='tooltip' class='edit_data' id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-pen'></i></span>";
+                            //             echo "<span title='Delete' data-toggle='tooltip' class='delete_data' id='" . $row["ISBN"] . "' fname='" . $row["Image"] . "' style='padding-right:5px'><i class='fas fa-trash'></i></span>";
+                            //             echo"</td>";
+                            //             echo"</tr>";
+                            //         }
+                                            ?>
+                            </tbody>
+                        </table>
+                        <?php
+                            //         $result->free();
+                            //     } else {
+                            //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
+                            //     }
+                            // } else {
+                            //     echo "Error: could not able to execute $sql." .$conn->error;
+                            // }
+                    ?>
+                    </div>
+            </div>
         </div>
     </div>
 

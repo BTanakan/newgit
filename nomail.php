@@ -7,18 +7,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,">
-    <link rel="shortcut icon" href="../photo/ico.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="photo/ico.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="backend.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="nomail.css">
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous">
-
+        crossorigin="anonymous" />
+    
 
 </head>
 
@@ -26,8 +25,8 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.php"><img src="../photo/logo.png" width="150px"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <a class="navbar-brand" href="index.php"><img src="photo/logo.png" width="150px"></a>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,13 +34,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link " href="Create.php">Create Shipment</a>
+                            <a class="nav-link" href="Create.php">Create Shipment</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Price.php">Price Estimation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Track.php">Track & Trace</a>
+                            <a class="nav-link active" href="">Track & Trace</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -49,22 +48,21 @@
                                 Report
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item active" href="">Shipment Report</a></li>
+                                <li><a class="dropdown-item" href="Shipment.php">Shipment Report</a></li>
                                 <li><a class="dropdown-item" href="COD.php">COD Shipment Report</a></li>
                                 <li><a class="dropdown-item" href="Pending.php">Pending Shipment Report</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <?php
+                        
                             //if(isset($_SESSION["name"])){
                         ?>
                         <li class="nav-item" style="float:right; right:125px;">
                             <div class="dropdown dropstart">
                                 <button class="btn dropdown-toggle" type="button" id="navbarDropdown"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Welcome, <?php echo $_SESSION["name"];?> ||
-                                    Role : <?php echo $_SESSION['role']; ?>
+                                 
                                 </button>
 
 
@@ -78,55 +76,53 @@
                                     <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                             </div>
-                            <?php
-                         //}
-                        ?>
+                         
                     </ul>
                 </div>
 
-            </div>
+            </div> -->
         </nav>
     </section>
     <br><br>
-    <!-- body -->
+
     <section>
         <div class="container shadow p-3 mb-5 bg-body rounded">
             <div class="container-fluid">
-                <form action="post" class="row" id="ShipmentForm">
+                <form action="post" class="row" id="TrackForm">
                     <div class="row g-4">
                         <div class="header">
-                            <h3><i class="fas fa-file-alt" style="color:#F03F45;"></i> Shipment Report</h3>
+                            <h3><i class="fas fa-box-open" style="color:#F03F45;"></i> Tracking</h3>
                         </div>
-                        <div class="form-floating col-md-5">
-                            <input type="date" class="form-control" name="DateForm" id="DateForm">
-                            <label for="DateForm"> Form</label>
+                        <div class="col-md-3">
+                            <select class="form-select" name="methoddb" id="">
+                                <option value="ReceiverName" id="ReceiverName" selected>Receiver Name</option>
+                                <option value="TrackNum" id="TrackNum">Track Number</option>
+                            </select>
                         </div>
-                        <div class="form-floating col-md-5">
-                            <input type="date" class="form-control" name="DateTo" id="DateTo">
-                            <label for="DateTo">To</label>
+                        <div class=" col-md-7">
+                            <input type="text" class="form-control" placeholder="Please fill in the information">
                         </div>
                         <div class="col-md-2">
-                            <button type="submit" class="btn btn-success" style="width:60%">Select</button>
+                            <button type="submit" class="btn btn-success" style="width:60%"><i class="fas fa-search"
+                                    style="color:white;"></i></button>
                         </div>
                     </div>
-            </div>
-            </form>
-            <br>
-            <hr>
-            <div class="col-md-12">
-                <table class="table table-striped table-hover" id="myTable">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Consignment No.</th>
-                            <th>Pickup Date</th>
-                            <th>Delivered Date</th>
-                            <th>Recipient Info</th>
-                            <th>COD Amount</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+                </form>
+                <br><hr>
+                <div class="col-md-12">
+                        <table class="table table-striped table-hover" id="myTable">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Pickup Date</th>
+                                    <th>Consignment No</th>
+                                    <th>Recipient Name</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                    <th>Copied Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
                             // $sql = "select * from book";
                             // if($result = $conn->query($sql)){
                             //     if($result -> num_rows > 0){
@@ -145,9 +141,9 @@
                             //             echo"</tr>";
                             //         }
                                             ?>
-                    </tbody>
-                </table>
-                <?php
+                            </tbody>
+                        </table>
+                        <?php
                             //         $result->free();
                             //     } else {
                             //         echo "<p class='lead' style='color:#fbeeac'><em>No records were found.</em></p>";
@@ -156,13 +152,13 @@
                             //     echo "Error: could not able to execute $sql." .$conn->error;
                             // }
                     ?>
+                    </div>
             </div>
-        </div>
     </section>
-
+   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -171,7 +167,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
+    
     <script>
     $(function() {
         $("#PostalForm").submit(function() {
@@ -190,7 +186,7 @@
                 }
             });
         });
-        $('#myTable').DataTable();
+        
     });
     </script>
 </body>
