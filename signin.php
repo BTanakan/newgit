@@ -65,7 +65,7 @@ include("include/config.php");?>
                         <i class="fab fa-google"></i>
                         <i class="fab fa-apple"></i>
                     </div>
-                    <form id="login" class="input-card">
+                    <form id="login" class="input-card" action="login.php" method='post'>
                         <input type="text" class="text-card" name="txtuse" id="txtuse"placeholder="Username">
                         <input type="password" class="text-card" name="txtps" id="txtps" placeholder="Password">
                         <button type="submit" class="submit-btn" id="btnlog">Log in</button>
@@ -126,21 +126,22 @@ include("include/config.php");?>
                 });
             });
 
-            $("#login").submit(function() {
-                event.preventDefault();
-                $.ajax({
-                    url: "login.php",
-                    type: "post",
-                    data: $("form#login").serialize(),
-                    success: function(data) {
-                        console.log(data);
-                        window.location.href = '/newgit/backend/Create.php';
-                    },
-                    error: function(data) {
-                        console.log("An error accured." + data);
-                    }
-                });
-            });
+            // $("#login").submit(function() {
+            //     event.preventDefault();
+            //     $.ajax({
+            //         url: "login.php",
+            //         type: "post",
+            //         data: $("form#login").serialize(),
+            //         success: function(data) {
+            //             console.log(data);
+            //             //window.location.href = '/newgit/backend/Create.php';
+            //         },
+            //         error: function(data) {
+            //             console.log("An error accured." + data);
+            //             //location.reload();
+            //         }
+            //     });
+            // });
 
             
 

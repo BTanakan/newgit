@@ -1,6 +1,7 @@
 <?php 
     session_start();
     include_once('../config.php');
+    
 
     $output = "";
 
@@ -44,10 +45,13 @@ $result = $query->execute();
 if($sql)
 {
 //var_dump("success");
-$output.="Send Success!";
+$output.="Send Success! <br>";
+$output.= "Tracking ID: ".$tracking;
 }
 } else {
-var_dump("fail");
+$output.="Fail";
 }
 echo $output;
+
+
 ?>

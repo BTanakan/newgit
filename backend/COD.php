@@ -43,6 +43,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="Track.php">Track & Trace</a>
                         </li>
+                        <?php 
+                        
+                        if($_SESSION['role'] == "hub")
+                        {
+                            echo "<li class='nav-item'>
+                            <a class='nav-link' href='hub.php'>Hub</a>
+                        </li>" ;
+                        } else if($_SESSION['role'] == "delivery")
+                        {
+                            echo "<li class='nav-item'>
+                            <a class='nav-link' href='#'>Delivery</a>
+                        </li>" ;
+                        }
+                        ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,9 +70,6 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <?php
-                            //if(isset($_SESSION["name"])){
-                        ?>
                         <li class="nav-item" style="float:right; right:125px;">
                             <div class="dropdown dropstart">
                                 <button class="btn dropdown-toggle" type="button" id="navbarDropdown"
