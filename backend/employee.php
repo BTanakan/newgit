@@ -36,7 +36,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <?php 
+                        <?php 
                         if($_SESSION['role'] == "customer")
                         {
                             echo " <li class='nav-item'>
@@ -106,168 +106,42 @@
 
     <!-- Sender -->
     <section>
-        <div class="container shadow p-3 mb-5 bg-body rounded">
-            <div class="container-fluid">
-                <form action="" method="post" class="row" id="SendForm">
-                    <?php 
-
-//if user if == sender user_id show foreach
-$sql = "SELECT* FROM sender WHERE user_id = :user_id ";
-$query = $db->prepare($sql);
-$query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
-$user_id = $_SESSION['user_id'];
-$query->execute();
-$result = $query->fetchAll(PDO::FETCH_OBJ);
-
-if($query->rowCount() > 0 ) {
-
-    foreach($result as $res) {
-    if($res->user_id == $_SESSION['user_id'])
-    {
-       //echo $res->firstname;
-       $_SESSION['sender_firstname'] = $res->firstname_lastname;
-        
-    
-?>
-                    <div class="row g-4">
-                        <div class="header">
-                            <h3><i class="fas fa-box" style="color:#F03F45;"></i> Sender Information</h3>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control bg-light text-dark" type="text" name="NameSend" id="NameSend"
-                                placeholder="Name Last-Name" value="<?php echo $res->firstname_lastname ?>" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control bg-light text-dark" type="tel" name="MBSend" id="MBSend"
-                                placeholder="Mobile Number" value="<?php echo $res->phone ?>" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control bg-light text-dark" type="text" name="AddersSend" id="AddersSend"
-                                value="<?php echo $res->address ?>" placeholder="Adders" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control bg-light text-dark" type="text" name="Adders2Send"
-                                id="Adders2Send" value="<?php echo $res->district_province ?>"
-                                placeholder="Sub-district / District / Province" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control bg-light text-dark" type="text" name="PostcodeSend"
-                                id="PostcodeSend" value="<?php echo $res->postcode ?>" placeholder="Postal code"
-                                required>
-
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="checkbox" id="exampleRadios1" value="1"
-                                checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Confirm
-                            </label>
-                        </div>
-
-                        <div class="col">
-                            <input class="btn btn-secondary" type="submit" name="btnUpdate" value="Update"
-                                style="float:right; width: 25% ">
-                        </div>
+        <div class="container-fluid">
+            <form action="" method="post" class="row" id="SendcuForm">
+                <div class="row g-4">
+                    <div class="header">
+                        <h3><i class="fas fa-box" style="color:#F03F45;"></i> Sender Information</h3>
                     </div>
-                </form>
-                <?php 
-    }
-}
-} else {
-    ?>
-                <form action="" method="post" class="row" id="SendForm">
-                    <div class="row g-4">
-                        <div class="header">
-                            <h3><i class="fas fa-box" style="color:#F03F45;"></i> Sender Information</h3>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control" type="text" name="NameSend" id="NameSend"
-                                placeholder="Name Last-Name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input class="form-control" type="tel" name="MBSend" id="MBSend" placeholder="Mobile Number"
-                                required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="AddersSend" id="AddersSend"
-                                placeholder="Adders" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="Adders2Send" id="Adders2Send"
-                                placeholder="Sub-district / District / Province" required>
-                        </div>
-                        <div class="col-md-4">
-                            <input class="form-control" type="text" name="PostcodeSend" id="PostcodeSend"
-                                placeholder="Postal code" required>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="checkbox" id="exampleRadios2" value="2">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Confirm
-                            </label>
-                        </div>
-                        <div class="col">
-                            <input class="btn btn-success" type="submit" name="btnSave" value="Save"
-                                style="float:right; width: 25% ">
-                        </div>
+                    <div class="col-md-6">
+                        <input class="form-control bg-light text-dark" type="text" name="NameSend" id="NameSend"
+                            placeholder="Name Last-Name" value="" required>
                     </div>
-                </form>
-
-
-                <?php 
-    }
-?>
-
-            </div>
-            <br><br>
-            <hr>
-
-            <!-- receipt -->
-            <div class="container-fluid">
-                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input class="form-control bg-light text-dark" type="tel" name="MBSend" id="MBSend"
+                            placeholder="Mobile Number" value="" required>
+                    </div>
                     <div class="col-md-4">
-                        <h3><i class="fas fa-user-check" style="color:#F03F45;"></i> Recipient information</h3>
+                        <input class="form-control bg-light text-dark" type="text" name="AddersSend" id="AddersSend"
+                            value="" placeholder="Adders" required>
                     </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ReceiveModal">New
-                            Recipient</button>
+                    <div class="col-md-4">
+                        <input class="form-control bg-light text-dark" type="text" name="Adders2Send" id="Adders2Send"
+                            value="" placeholder="Sub-district / District / Province" required>
                     </div>
-                    <div class="col-md-12">
-                        <table class="table table-striped table-hover" id="myTable">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>Tacking</th>
-                                    <th>No.</th>
-                                    <th>Recipient info</th>
-                                    <th>Cost Amount</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
+                    <div class="col-md-4">
+                        <input class="form-control bg-light text-dark" type="text" name="PostcodeSend" id="PostcodeSend"
+                            value="" placeholder="Postal code" required>
 
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Modal Section -->
-    <div class="modal fade" id="ReceiveModal">
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <form method="post" id="ReceiveForm">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><i class="fas fa-user-check"></i> Recipient information</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" id="xClose"></button>
                     </div>
-                    <div class="modal-body" id="modalbody">
-                        <div class="container-fluid">
-                            <div class="row g-3">
+
+
+
+
+
+
+                       <div class="row g-3">
                                 <div class="col-md-6 form-floating">
                                     <input class="form-control" type="text" name="NameReceive" id="NameReceive"
                                         placeholder="Name Last-Name" required>
@@ -319,17 +193,18 @@ if($query->rowCount() > 0 ) {
                                             <option value="west">West </option>
                                         </select>
                                     </div>
-                            </div>
+
+                                    <div class="col">
+                            <input class="btn btn-success" type="submit" name="btnSave" value="Save"
+                                style="float:right; width: 25% ">
                         </div>
-                    </div>
-                    <div class="modal-footer" id="footermodal">
-                        <input class="btn btn-success" type="submit" name="btnSave" value="Save"
-                            style="float:right; width: 25% ">
-                    </div>
-                </form>
-            </div>
+
+                            </div>
+                </div>
+            </form>
+
         </div>
-    </div>
+    </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -343,16 +218,17 @@ if($query->rowCount() > 0 ) {
     $(document).ready(function() {
         console.log("Function Ready!.");
 
-        $("#SendForm").submit(function(e) {
+        $("#SendcuForm").submit(function(e) {
             console.log("save");
             event.preventDefault();
             $.ajax({
-                url: "sender.php",
+                url: "sendcu.php",
                 type: "POST",
-                data: $('form#SendForm').serialize(),
+                data: $('form#SendcuForm').serialize(),
                 success: function(data) {
                     console.log("Success", data);
                     location.reload();
+                    alert(data);
                 },
                 error: function(data) {
                     console.log('An error occurred.');
@@ -361,26 +237,26 @@ if($query->rowCount() > 0 ) {
             });
         });
 
-        $("#ReceiveForm").submit(function(e) {
-            console.log("receiver");
-            event.preventDefault();
-            $.ajax({
-                url: "send.php",
-                type: "POST",
-                data: $('form#ReceiveForm').serialize(),
-                success: function(data) {
-                    console.log("Success", data);
-                    $("#modalbody").html(data);
-                    var btnClose =
-                        ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
-                    $("#footermodal").html(btnClose);
-                },
-                error: function(data) {
-                    console.log('An error occurred.');
-                    console.log(data);
-                },
-            });
-        });
+        // $("#ReceiveForm").submit(function(e) {
+        //     console.log("receiver");
+        //     event.preventDefault();
+        //     $.ajax({
+        //         url: "send.php",
+        //         type: "POST",
+        //         data: $('form#ReceiveForm').serialize(),
+        //         success: function(data) {
+        //             console.log("Success", data);
+        //             $("#modalbody").html(data);
+        //             var btnClose =
+        //                 ' <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>'
+        //             $("#footermodal").html(btnClose);
+        //         },
+        //         error: function(data) {
+        //             console.log('An error occurred.');
+        //             console.log(data);
+        //         },
+        //     });
+        // });
 
 
 

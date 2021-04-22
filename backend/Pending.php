@@ -34,9 +34,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Create.php">Create Shipment</a>
-                        </li>
+                    <?php 
+                        if($_SESSION['role'] == "customer")
+                        {
+                            echo " <li class='nav-item'>
+                            <a class='nav-link '' href='Create.php'>Create Shipment</a>
+                        </li>";
+                        }
+                       ?>
                         <li class="nav-item">
                             <a class="nav-link" href="Price.php">Price Estimation</a>
                         </li>
@@ -54,6 +59,11 @@
                         {
                             echo "<li class='nav-item'>
                             <a class='nav-link' href='delivery.php'>Delivery</a>
+                        </li>" ;
+                        } else if($_SESSION['role'] == "employee")
+                        {
+                            echo "<li class='nav-item'>
+                            <a class='nav-link' href='employee.php'>Employee</a>
                         </li>" ;
                         }
                         ?>

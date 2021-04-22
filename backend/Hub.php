@@ -36,9 +36,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link " href="Create.php">Create Shipment</a>
-                        </li>
+                    <?php 
+                        if($_SESSION['role'] == "customer")
+                        {
+                            echo " <li class='nav-item'>
+                            <a class='nav-link '' href='Create.php'>Create Shipment</a>
+                        </li>";
+                        }
+                       ?>
                         <li class="nav-item">
                             <a class="nav-link" href="Price.php">Price Estimation</a>
                         </li>
@@ -172,7 +177,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Detail Book </h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Delete Order </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -216,7 +221,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <input type="text" class="form-control" id="name" name="txt_status"
-                                        placeholder="Book Name">
+                                        placeholder="Status">
                                 </div>
 
 
