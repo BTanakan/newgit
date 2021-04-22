@@ -37,6 +37,9 @@
                             echo " <li class='nav-item'>
                             <a class='nav-link '' href='Create.php'>Create Shipment</a>
                         </li>";
+                        echo " <li class='nav-item'>
+                        <a class='nav-link '' href='cu-dashbord.php'>DashBoard</a>
+                    </li>";
                         }
                        ?>
                         <li class="nav-item">
@@ -62,6 +65,9 @@
                             echo "<li class='nav-item'>
                             <a class='nav-link' href='employee.php'>Employee</a>
                         </li>" ;
+                        echo " <li class='nav-item'>
+                        <a class='nav-link '' href='em-dashbord.php'>DashBoard</a>
+                    </li>";
                         }
                         ?>
                      
