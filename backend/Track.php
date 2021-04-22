@@ -47,7 +47,7 @@
                         }
                        ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="Price.php">Price Estimation</a>
+                            <a class="nav-link" href="index.php">Price Estimation</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="">Track & Trace</a>
