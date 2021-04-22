@@ -88,16 +88,9 @@
 
                                 </div>
                                 <!-- End box-pack -->
-
-                                <div class="enter-box">
-                                    <div class="container-web">
-                                        <div class="enter">
-                                            <button class="btnenter" type="submit" id="btnSubmit"
-                                                onClick="priceFunction();">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <br>
+                                <br>
+                                <br>
                                 <div class="cost-box">
                                     <div class="container-web">
                                         <label for="">Price is:</label>
@@ -175,11 +168,11 @@
                     </script>
                     <script>
                     $(document).ready(function() {
-                       
+                        
                         $('select').on('change', function() {
 
-                            $('.result').text($('select[name=cal]').val()-($('select[name=cal]').val() + $('select[name=location]').val())
-    );
+                            $('.result').text(p);
+                            var p = ($('select[name=cal]').val() + $('select[name=location]').val());
 
                         });
 
