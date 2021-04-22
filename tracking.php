@@ -115,10 +115,13 @@
                 </p><br>
             </div>
             <div class="row g-4">
+            <form action="" method="post" class="row" id="TrackForm">
                 <div class="col-md-6" style="margin: auto; padding: 1rem 1rem; display: flex">
-                    <input class="form-control" type="text" name="" id="" placeholder="Trick number">
+                    <input class="form-control" type="text" name="get_tack" id="" placeholder="Trick number" value="<?php if(isset($_POST['get_tack'])) {echo $_POST['get_tack']; } ?>">
                     <button class="btn" type="submit" id="button-addon2">Enter</button>
                 </div>
+            </form>
+
             </div>
             <div class="col-md-12">
                         <table class="table table-striped table-hover" id="myTable">
@@ -133,25 +136,47 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                            // $sql = "select * from book";
-                            // if($result = $conn->query($sql)){
-                            //     if($result -> num_rows > 0){
-                            //         while($row=$result->fetch_array()){
-                            //             echo "<tr>";
-                            //             echo "<td>".$row["Tacking"]."</td>";
-                            //             echo "<td>".$row["Name"]."</td>";
-                            //             echo "<td>".$row["Author"]."</td>";
-                            //             echo "<td>".$row["Stock"]."</td>";
-                            //             echo "<td>".$row["Price"]."</td>";
-                            //             echo "<td>";
-                            //             echo "<span title='View' data-toggle='tooltip' class='view_data'  id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-eye'></i></span>";
-                            //             echo "<span title='Edit' data-toggle='tooltip' class='edit_data' id='" . $row["ISBN"] . "' style='padding-right:5px'><i class='fas fa-pen'></i></span>";
-                            //             echo "<span title='Delete' data-toggle='tooltip' class='delete_data' id='" . $row["ISBN"] . "' fname='" . $row["Image"] . "' style='padding-right:5px'><i class='fas fa-trash'></i></span>";
-                            //             echo"</td>";
-                            //             echo"</tr>";
-                            //         }
-                                            ?>
+                            <?php 
+                                     if(isset($_POST['get_tack']))
+                                     {
+                                         include_once('config.php');
+                                        //  var_dump("Hello");
+                                        $sql = "SELECT* FROM receiver WHERE tracking_number  = :tracking_number
+                                                    or receiver_name = :tracking_number";
+                                        $query = $db->prepare($sql);
+                                        $query->bindParam(':tracking_number', $tracking_number, PDO::PARAM_STR);
+                                        $tracking_number = $_POST['get_tack'];
+                                        $query->execute();
+                                        $result = $query->fetchAll(PDO::FETCH_OBJ);
+                                
+                                        if($query->rowCount() > 0) {
+                                            foreach($result as $res) {
+                                                if($res->tracking_number == $tracking_number || $res->receiver_name == $tracking_number)
+                                                {
+                                                    echo "<tr>";
+                                                    echo "<td>".$res->Pickup_Date. "</td>";
+                                                    echo "<td>".$res->sender_firstname_lastname. "</td>";
+                                                    echo "<td>".$res->receiver_name. "</td>";
+                                                    echo "<td>".$res->address. "</td>";
+                                                    echo "<td>".$res->status. "</td>";
+                                                    echo "<td>".$res->price. "</td>";
+                                                    echo "</tr>";
+                                                    
+                                                    $_SESSION['tracking'] = $res->tracking_number;
+                                                    echo "<br>";
+                                                    // echo "ชื่อผู้รับ: " .$res->receiver_name ."<br>";
+                                                    // echo "หมายเลขพัสดุ: " .$res->tracking_number ."<br>";
+                                                    // echo "ที่อยู่: " .$res->address ."<br>";
+                                                    // echo "สถานะ: " .$res->status ."<br>";
+                                                }
+                                                else{
+                                                    $output.="login fail something wrong";
+                                                }
+                                            }
+                                        }
+                                     }
+                                
+                                ?>
                             </tbody>
                         </table>
                         <?php

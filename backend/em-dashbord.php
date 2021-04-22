@@ -28,7 +28,7 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href=""><img src="../photo/logo.png" width="150px"></a>
+                <a class="navbar-brand" href="../index.php"><img src="../photo/logo.png" width="150px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -62,6 +62,14 @@
                             echo "<li class='nav-item'>
                             <a class='nav-link' href='#'>Delivery</a>
                         </li>" ;
+                        }  else if($_SESSION['role'] == "employee")
+                        {
+                            echo "<li class='nav-item'>
+                            <a class='nav-link' href='employee.php'>Employee</a>
+                        </li>" ;
+                        echo " <li class='nav-item'>
+                        <a class='nav-link '' href='em-dashbord.php'>DashBoard</a>
+                    </li>";
                         }
                         ?>
                        
@@ -105,9 +113,10 @@
                     <thead>
                         <tr>
                             <th scope="col">Tracking</th>
+                            <th scope="col">Receiver Name</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Date</th>
                             <th scope="col">Actions</th>
-                            <th scope="col">Driver</th>
 
                         </tr>
                     </thead>
@@ -116,10 +125,8 @@
                         <?php 
                 include_once('../config.php');
                          
-                $sql = "SELECT* FROM receiver WHERE region  = :region";
+                $sql = "SELECT* FROM receiver";
                         $query = $db->prepare($sql);
-                       $query->bindParam(':region', $region, PDO::PARAM_STR);
-                       $region = 'south';
                         $query->execute();
                         $result = $query->fetchAll(PDO::FETCH_OBJ);
                         if($query->rowCount() >0) {
@@ -129,43 +136,25 @@
                                 //echo $res->user_id. "<br>" ;
                         ?>
                         <tr>
+                        
                             <td class="track"><?php echo $res->tracking_number?></td>
+                            <td class="name"><?php echo $res->receiver_name?></td>
+                            <td class="status"><?php echo $res->Pickup_Date?></td>
                             <td class="status"><?php echo $res->status?></td>
+                           
+                            
                             <td>
                                 <i class="fa fa-pencil edit" data-toggle="modal" data-target="#modaledit"
                                     aria-hidden="true" id="<?php  echo $res->tracking_number ?>"></i>
                                 <i class="fa fa-trash Del_ID" name="Del_ID" value="<?php  echo $res->tracking_number ?>
                                     " i>
                             </td>
-                            <?php 
-                                include_once('../config.php');
-                                $sql = "SELECT d.*
-                                                FROM receiver r inner join driver d
-                                                on r.driver_id = d.driver_id
-                                               where r.driver_id = :user_id";
-                                $query = $db->prepare($sql);
-                               $query->bindParam(':user_id', $driver_id, PDO::PARAM_STR);
-                               $driver_id = $res->driver_id;
-                                $query->execute();
-                                $result1 = $query->fetchAll(PDO::FETCH_OBJ);
-                                if($query->rowCount() >0) {
-                                    foreach($result1 as $des) 
-                                    {
-
-                                 
-                            ?>
-                            <td class="driver"><?php echo $des->firstname?></td>
+                
                         </tr>
                                         <?php 
                                            }
                                         }
                                         ?>
-
-                        <?php 
-}
-
-                        }
-                        ?>
                     </tbody>
                 </table>
             </div>
@@ -227,33 +216,6 @@
 
                             </div>
                             <br>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <select name="driver_name" id="" class="form-control driver">
-                                        <option option value="" disabled selected > <p id="driverse">Select Driver</p></option>
-                                        <?php 
-                                     $sql = "SELECT* FROM driver";
-                                     $query = $db->prepare($sql);
-                                   // $query->bindParam(':region', $region, PDO::PARAM_STR);
-                                   // $region = 'south';
-                                     $query->execute();
-                                     $result = $query->fetchAll(PDO::FETCH_OBJ);
-                                     if($query->rowCount() >0) {
-                                        foreach($result as $res) 
-                                        {
-                                ?>
-
-                                        <option  value="<?php echo $res->driver_id ?>"><?php echo $res->firstname ?>
-                                        </option>
-                                        <?php 
-                                        }
-                                     }
-                                ?>
-                                    </select>
-
-                                </div>
-
-                            </div>
                         </div>
 
 
@@ -334,7 +296,7 @@
             console.log("onClick");
             e.preventDefault();
             $.ajax({
-                url: "update-hub.php",
+                url: "update-cu.php",
                 type: "POST",
                 data: $('form#frmedit').serialize(),
                 success: function(data) {
